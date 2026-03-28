@@ -30,23 +30,17 @@ The paper shows that the correct observable is defined at the level of
 **conjugate pairs of Weil blocks**, not individual blocks.
 
 Defining the pair observable:
-\[
-\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n),
-\]
+$\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n),$
 
 the asymptotic scaling becomes:
-\[
-\sigma_{\mathrm{pair}}(n) \sim n^{-\delta_{\mathrm{pair}}},
+$\sigma_{\mathrm{pair}}(n) \sim n^{-\delta_{\mathrm{pair}}},
 \quad
-\delta_{\mathrm{pair}} = 2\,\delta_c.
-\]
+\delta_{\mathrm{pair}} = 2\,\delta_c.$
 
 Numerically:
-\[
-\delta_c \approx 3.7
+$\delta_c \approx 3.7
 \quad \Longrightarrow \quad
-\delta_{\mathrm{pair}} \approx 7.4,
-\]
+\delta_{\mathrm{pair}} \approx 7.4,$
 
 which matches the **lower bound of the phenomenological range**.
 
@@ -61,8 +55,7 @@ The paper proves that:
   $\rho_{q-c} = \overline{\rho_c}$
 - the Gram–Schmidt dynamics is identical for $(c, q-c)$
 - therefore:
-  \[
-  \delta_c = \delta_{q-c}
+  $  \delta_c = \delta_{q-c}
   \]
 
 This is an exact structural result, independent of numerical fitting.
@@ -75,10 +68,8 @@ The key correction is:
 > admissibility is defined on fibres of the projection Π, not on individual preimages.
 
 This leads to the pair observable:
-\[
-R_n^{\mathrm{pair}} = \frac{1}{m_{\mathrm{pairs}}}
-\sum_{c} \sigma_c(n)\,\sigma_{q-c}(n)
-\]
+$R_n^{\mathrm{pair}} = \frac{1}{m_{\mathrm{pairs}}}
+\sum_{c} \sigma_c(n)\,\sigma_{q-c}(n)$
 
 This observable:
 
@@ -90,18 +81,14 @@ This observable:
 ## 3. Resolution of the δ-deficit
 
 The discrepancy identified in O12–O15:
-\[
-\hat\delta_{\mathrm{exact}} \approx 3.7 \ll 7.4
-\]
+$\hat\delta_{\mathrm{exact}} \approx 3.7 \ll 7.4$
 
 is resolved as:
 
 > a single-branch measurement of a two-branch structure.
 
 The correct exponent is:
-\[
-\delta_{\mathrm{pair}} = 2\,\hat\delta_{\mathrm{exact}}
-\]
+$\delta_{\mathrm{pair}} = 2\,\hat\delta_{\mathrm{exact}}$
 
 No modification of the model or dynamics is required.
 
@@ -109,9 +96,7 @@ No modification of the model or dynamics is required.
 ## 4. Spectral lower bound
 
 The pair spectrum satisfies:
-\[
-\delta_{\mathrm{pair}} \ge \delta_{\min} \approx 7.4,
-\]
+$\delta_{\mathrm{pair}} \ge \delta_{\min} \approx 7.4,$
 
 with no observed values below this bound.
 
@@ -124,9 +109,7 @@ This establishes:
 ## 5. Status of the factor r(c,q)
 
 The multiplicative ratio:
-\[
-r(c,q) = \frac{\sigma_{q-c}}{\sigma_c}
-\]
+$r(c,q) = \frac{\sigma_{q-c}}{\sigma_c}$
 
 is shown to:
 
@@ -154,9 +137,7 @@ O16 refines the hierarchy introduced in O15:
 
 The key identification is:
 
-\[
-\alpha_{\mathrm{dyn}} = \delta_{\mathrm{pair}}
-\]
+$\alpha_{\mathrm{dyn}} = \delta_{\mathrm{pair}}$
 
 under the fibre-admissibility prescription.
 
@@ -223,14 +204,10 @@ While the lower bound is now understood, the **upper bound**
 of the phenomenological range remains open.
 
 The pair spectrum extends beyond:
-\[
-\delta_{\mathrm{pair}} > 10.6
-\]
+$\delta_{\mathrm{pair}} > 10.6$
 
 but observed configurations satisfy:
-\[
-\delta_{\mathrm{pair}} \in [7.4, 10.6].
-\]
+$\delta_{\mathrm{pair}} \in [7.4, 10.6].$
 
 The selection mechanism is not spectral.
 
