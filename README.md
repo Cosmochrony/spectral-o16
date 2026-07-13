@@ -1,6 +1,6 @@
 This repository contains the source of the **O16** Cosmochrony paper  
-[*Fibre Admissibility and Exponent Doubling in the Exact Weil Regime:
-Resolution of the δ-Deficit via Conjugate Pair Observables*](out/SpectralO16.pdf).
+*Fibre Admissibility and Exponent Doubling in the Exact Weil Regime:
+Resolution of the δ-Deficit via Conjugate Pair Observables*.
 
 This work extends the **spectral admissibility sub-programme** by resolving the
 open problem left by **O15**:
