@@ -1,11 +1,17 @@
 \documentclass[11pt,a4paper]{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{doi}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -21,26 +27,26 @@
 \newcommand{\ZqZ}{\mathbb{Z}/q\mathbb{Z}}
 \newcommand{\Fq}{(\mathbb{Z}/q\mathbb{Z})^*}
 
-\title{Fibre Admissibility and Resolution of the Capacity Exponent Discrepancy\\
+\title{Fibre Admissibility and Exact Pair-Exponent Doubling\\
 \large O16 --- Spectral Admissibility Subprogram}
 
 \author{J.~Beau\\
 \small Independent Researcher}
 
-\date{2026}
+\date{2026\\Version 1.0.1}
 
 \begin{document}
 
   \maketitle
 
   \begin{abstract}
+    \vspace{0.5em}
     The O-series has established that the Weil-block capacity exponent
     $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ falls systematically
-    below the phenomenological target range $\delta \in [7.4, 10.6]$,
-    and that this discrepancy is structural: no reweighting of block data
-    can raise the exponent (O15~\cite{Beau2026a19}, Corollary~4.8).
-    The present paper resolves the discrepancy by identifying a
-    misidentification of the physically relevant observable.
+    below the phenomenological comparison range
+    $\delta \in [7.4, 10.6]$, and that no reweighting of block data
+    can raise the exponent.
+    The present paper identifies a distinct fibre-level observable.
     The non-injectivity of the projection~$\Pi$, established from the
     Born--Infeld constraint, implies that admissibility is a property
     of complete fibres of~$\Pi$, not of individual preimage configurations.
@@ -50,14 +56,18 @@
     The pair-level observable $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$
     follows a clean power law with exponent $\delta_{\mathrm{pair}} = 2\,\delta_c
     \approx 7.44 \pm 0.12$, confirmed numerically with $R^2 > 0.9999$ and a
-    factor-of-six reduction in slope variance.
-    This result does not modify the underlying model; it identifies the
-    correct unit of observation.
+    factor-of-six reduction in slope variance under the production
+    $\log(n+1)$ fitting convention.
+    On the same finite windows, conversion to the paper-level $\log n$
+    definition gives approximately $6.6$--$6.9$.
+    The exact doubling is a fibre-side result; it does not derive a native
+    Heisenberg growth process carrying the pair observable and therefore
+    does not establish the capacity-to-rate transfer.
   \end{abstract}
 
   \paragraph{Keywords.}
     non-injective projection, Weil representation, conjugate pairs, fibre admissibility, spectral redundancy, exponent
-    doubling, asymptotic scaling, Heisenberg group, pair observable.
+    doubling, finite-window scaling, Heisenberg group, pair observable.
 
     \clearpage
     \tableofcontents
@@ -84,7 +94,7 @@
     \item The arithmetic mean $\bar\sigma(n) = m_{\mathrm{block}}^{-1}
     \sum_c \sigma_c(n)$ is the observable currently extracted by the pipeline.
     The exponent $\dhat$ fitted from $\bar\sigma(n)$ satisfies
-    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ universally across
+    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ across the sampled
     $q \in \{29, 61, 101, 151, 211\}$.
 
     \item This value is structurally below the phenomenological target
@@ -94,17 +104,17 @@
     eliminating arithmetic corrections as a resolution.
   \end{enumerate}
 
-  The present paper identifies the source of the remaining discrepancy
-  and resolves it through a redefinition of the observable, dictated
+  The present paper identifies a fibre-level observable through a
+  redefinition dictated
   by the non-injectivity structure of~$\Pi$ already present in the
   Born--Infeld framework~\cite{Beau2026a2}.
   Papers O12--O15~\cite{Beau2026a16,Beau2026a17,Beau2026a18,Beau2026a19}
   correctly compute the admissible capacity at the level
   of individual spectral blocks.
-  The result below shows that the physically relevant observable lives
-  at the level of \emph{conjugate pairs}, without modifying the
+  The result below constructs a proposed fibre-level observable at
+  the level of \emph{conjugate pairs}, without modifying the
   underlying construction.
-  A key diagnostic is that a genuine asymptotic power law emerges only
+  A key diagnostic is that a cleaner finite-window power law emerges
   at the pair level: at the level of individual blocks, the log-log
   scaling exhibits significant drift (local-slope standard deviation
   $\approx 0.98$), while the pair-level observable achieves a
@@ -201,10 +211,10 @@ Section~\ref{sec:doubling} a robust result.
 
   \subsection{Definition of the pair-level observable}
 
-    Admissibility, correctly defined under the fibre structure of~$\Pi$,
+    Under the proposed fibre structure of~$\Pi$, admissibility
     is a property of the \emph{complete fibre}, not of an individual
     preimage.
-    The physically relevant observable is the joint admissibility of the
+    The corresponding fibre-level observable is the joint admissibility of the
     conjugate pair:
     \begin{equation}
       \sigma_{\mathrm{pair}}(n) \;:=\; \sigma_c(n)\,\sigma_{q-c}(n)
@@ -242,14 +252,18 @@ structurally distinct observables.
       \label{eq:doubling}
     \end{equation}
     Substituting the empirical value $\delta_{c,\min} \approx 3.72 \pm 0.06$
-    (universal across $q \in \{29, \ldots, 211\}$):
+    (measured across $q \in \{29, \ldots, 211\}$):
     \begin{equation}
       \delta_{\mathrm{pair},\min} \;=\; 2\,\delta_{c,\min}
       \;\approx\; 7.44 \pm 0.12.
       \label{eq:delta_pair}
     \end{equation}
-    This falls at the lower boundary of the phenomenological
-    target~$[7.4, 10.6]$.
+    This lies at the lower boundary of the phenomenological
+    comparison range~$[7.4, 10.6]$ under the production
+    $\log(n+1)$ convention.
+    On the same finite windows, conversion to the paper-level
+    $\log n$ definition gives approximately $6.6$--$6.9$, below
+    that range~\cite{Beau2026sgn}.
 
   \section{Numerical validation}
   \label{sec:validation}
@@ -292,7 +306,8 @@ structurally distinct observables.
       $\sigma_{\mathrm{pair}}(n)$, with power-law fits.
       \emph{Right panels}: local log-log slopes in the respective fit
       windows $[n_0, n_1]$.
-      The shaded green band marks the phenomenological target $[-10.6, -7.4]$.
+      The shaded green band marks the phenomenological comparison
+      range $[-10.6, -7.4]$ under the production convention.
       In both cases the pair-level slopes lie entirely within this band,
       with variance reduced by a factor~$\sim 6\times$ relative to the
       single-block observable.
@@ -308,11 +323,11 @@ structurally distinct observables.
     Let $\Pi$ carry the parity involution~\eqref{eq:parity}.
     In the Weil realisation of $\Heis(\ZqZ)$, the fibres of~$\Pi$
     are organised as conjugate pairs $\{c, q-c\}$ under~\eqref{eq:weil_conj}.
-    The physically relevant observable, defined on complete fibres, is
+    The proposed fibre-level observable, defined on complete fibres, is
     $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$,
-    with asymptotic exponent
-    $\delta_{\mathrm{pair}} = 2\,\delta_c \approx 7.44$,
-    consistent with the phenomenological range $[7.4, 10.6]$.
+    with fitted finite-window exponent
+    $\delta_{\mathrm{pair}} = 2\,\delta_c \approx 7.44$
+    under the production fitting convention.
   \end{proposition}
 
   \begin{remark}[What is derived vs.\ what is hypothesised]
@@ -328,12 +343,13 @@ structurally distinct observables.
   \end{remark}
 
   \begin{remark}[Absence of model modification]
-This result requires no modification of the relaxation dynamics,
-the Born--Infeld saturation mechanism, or the Weil-block pipeline.
+The pair construction requires no modification of the Weil-block
+pipeline or of the exact conjugation identity.
 The underlying model of O12--O15~\cite{Beau2026a16,Beau2026a17,Beau2026a18,Beau2026a19} is unchanged.
-The correction is entirely at the level of observable identification:
-the correct unit of admissibility is the conjugate pair, not the
-individual block.
+The proposed fibre-level unit of admissibility is the conjugate pair,
+not the individual block.
+This statement does not identify a native growth equation for that
+observable.
   \end{remark}
 
   \begin{remark}[Amplitude factor $r(c,q)$]
@@ -354,41 +370,41 @@ an open problem.
     $(c, q-c)$ rather than individual blocks.
     For each pair, compute $\sigma_c(n) \cdot \sigma_{q-c}(n)$ and
     extract~$\delta$ from the resulting profile.
-    The expected value is $\delta_{\mathrm{pair}} \approx 7.5$,
-    within the phenomenological target.
+    The expected value is $\delta_{\mathrm{pair}} \approx 7.5$
+    under the production convention.
 
   \paragraph{Relation to O15 scenarios~\cite{Beau2026a19}.}
-    The C1 scenario of O15~\cite{Beau2026a19} (same functional form, corrected exponent)
-    is confirmed: $\sigma_{\mathrm{pair}}(n)$ follows the same power-law
+    The functional-form component of the C1 scenario of
+    O15~\cite{Beau2026a19} is confirmed:
+    $\sigma_{\mathrm{pair}}(n)$ follows the same power-law
     form as $\sigma_c(n)$, with exponent doubled by the fibre structure.
-    The C2 scenario (modified functional form with $q$-dependent correction)
-    is not required.
+    No modified functional form is required for this exact pair-exponent
+    statement.
+    This does not confirm the insertion of the exponent into the O7
+    growth law.
 
   \paragraph{Relation to $\bstar$.}
-    The structural relation $\bstar = 1/(\delta + 1/2)$, used throughout
-    the O-series, should now be evaluated at
-    $\delta = \delta_{\mathrm{pair}} \approx 7.44$ rather than at
-    $\dhat_{\mathrm{exact}} \approx 3.72$.
-    Since $\bstar$ is defined from the asymptotic scaling of the
-    physically relevant observable, the substitution
-    $\delta \to \delta_{\mathrm{pair}}$ is required once admissibility
-    is defined at the fibre level: the exponent entering the relation
-    must be that of $R_n^{\mathrm{pair}}$, not of the individual-block
-    mean~$\bar\sigma(n)$.
-    This gives
+    If one externally identifies the O7 reduced-model redundancy with
+    the Heisenberg pair observable, the cross-substrate prescription
+    evaluates the O7 expression at
+    $\delta = \delta_{\mathrm{pair}}$ rather than at the individual-block
+    exponent.
+    Under that additional hypothesis, the production value gives
     \begin{equation}
-      \bstar \;\approx\; \frac{1}{7.44 + 0.5} \;\approx\; 0.127,
+      \beta^*_{\mathrm{presc}}
+      \;:=\; \frac{1}{7.44 + 0.5} \;\approx\; 0.127,
     \end{equation}
-    compared to the previous estimate $\bstar \approx 0.213$ from
-    $\delta \approx 3.72$.
-    The phenomenological implications are deferred to the companion
-    white paper~\cite{Beau2026a1}.
+    a phenomenological coincidence check rather than a native
+    derivation.
+    The fixed Heisenberg Cayley graph has frontier $N^{3/4}$, not the
+    square-root frontier of O7, and no pair-capacity growth carrier is
+    defined in the corpus~\cite{Beau2026sgn}.
 
   \paragraph{Open direction.}
     A derivation of the parity involution~\eqref{eq:parity} from first
-    principles within Cosmochrony would close the remaining logical gap
-    and promote Proposition~\ref{prop:main} from a well-supported
-    structural result to a theorem.
+    principles within Cosmochrony would promote the fibre interpretation
+    in Proposition~\ref{prop:main}.
+    It would not by itself close the separate capacity-to-rate bridge.
 
   \section*{Acknowledgements}
 
@@ -396,7 +412,6 @@ an open problem.
   programme that led to the identification of the fibre structure
   as the relevant unit of admissibility.
 
-  \clearpage
   \bibliographystyle{plain}
   \bibliography{cosmochrony-bibliography}
 

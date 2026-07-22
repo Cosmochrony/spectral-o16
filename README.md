@@ -1,6 +1,9 @@
 This repository contains the source of the **O16** Cosmochrony paper  
-*Fibre Admissibility and Exponent Doubling in the Exact Weil Regime:
-Resolution of the δ-Deficit via Conjugate Pair Observables*.
+*Fibre Admissibility and Exact Pair-Exponent Doubling*.
+
+**Version 1.0.1.** The exact conjugate-pair relation and exponent doubling are retained.
+The numerical overlap with the capacity-to-rate target is convention-sensitive and is not a native
+Heisenberg derivation of the cascade exponent.
 
 This work extends the **spectral admissibility sub-programme** by resolving the
 open problem left by **O15**:
@@ -21,18 +24,18 @@ open problem left by **O15**:
 
 This left a single well-posed problem:
 
-> identify the correct observable entering the growth law in the exact-block regime.
+> identify a fibre-level observable in the exact-block regime and determine its exponent.
 
 
 # Core Result
 
-The paper shows that the correct observable is defined at the level of
+The paper constructs a proposed fibre-level observable from
 **conjugate pairs of Weil blocks**, not individual blocks.
 
 Defining the pair observable:
 $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n),$
 
-the asymptotic scaling becomes:
+the finite-window scaling is:
 $\sigma_{\mathrm{pair}}(n) \sim n^{-\delta_{\mathrm{pair}}},
 \quad
 \delta_{\mathrm{pair}} = 2\,\delta_c.$
@@ -42,7 +45,9 @@ $\delta_c \approx 3.7
 \quad \Longrightarrow \quad
 \delta_{\mathrm{pair}} \approx 7.4,$
 
-which matches the **lower bound of the phenomenological range**.
+which meets the lower edge of the phenomenological comparison range under the production
+$\log(n+1)$ convention.
+On the same finite windows, conversion to $\log n$ gives approximately $6.6$--$6.9$, below that edge.
 
 
 # Main Structural Results
@@ -75,35 +80,30 @@ This observable:
 
 - restores a clean power law (R² > 0.9999)
 - reduces slope variance by a factor ≈ 6
-- yields the correct exponent scale
+- yields the exactly doubled pair exponent under the chosen fitting convention
 
 
-## 3. Resolution of the δ-deficit
+## 3. Exact doubling and the apparent δ-deficit
 
 The discrepancy identified in O12–O15:
 $\hat\delta_{\mathrm{exact}} \approx 3.7 \ll 7.4$
 
-is resolved as:
+is re-expressed at pair level as:
 
 > a single-branch measurement of a two-branch structure.
 
-The correct exponent is:
+The pair exponent is:
 $\delta_{\mathrm{pair}} = 2\,\hat\delta_{\mathrm{exact}}$
 
-No modification of the model or dynamics is required.
+No modification of the exact Weil-block computation is required.
+This statement does not identify a native growth law carrying the pair observable.
 
 
-## 4. Spectral lower bound
+## 4. Production-window comparison
 
-The pair spectrum satisfies:
-$\delta_{\mathrm{pair}} \ge \delta_{\min} \approx 7.4,$
-
-with no observed values below this bound.
-
-This establishes:
-
-- a **structural lower bound** imposed by the Weil representation
-- independent of numerical or dynamical effects
+The reported production-window values lie near $7.4$ under the $\log(n+1)$ convention.
+They do not establish a structural lower bound: the estimator conversion to $\log n$ moves the same
+finite-window values to approximately $6.6$--$6.9$.
 
 
 ## 5. Status of the factor r(c,q)
@@ -135,81 +135,70 @@ O16 refines the hierarchy introduced in O15:
 - \(\alpha_{\mathrm{dyn}}\):  
   dynamic exponent entering the growth law
 
-The key identification is:
+The cross-substrate prescription would identify:
 
 $\alpha_{\mathrm{dyn}} = \delta_{\mathrm{pair}}$
 
-under the fibre-admissibility prescription.
+under an additional hypothesis linking the O7 reduced-model growth variable to the Heisenberg pair observable.
+No such native pair-capacity growth process is defined or derived in the frozen corpus.
 
 
 # Interpretation of the Result
 
 The central conceptual outcome is:
 
-> the exact-block mismatch was not due to the growth law,
-> but to an incomplete definition of the observable.
+> conjugate Weil blocks define a cleaner fibre-level observable with an exactly doubled exponent.
 
 More precisely:
 
 - O15: scalar observable invalid
-- O16: correct observable = fibre-level (pair) observable
+- O16: proposed fibre observable = conjugate-pair observable
 
-This shifts the issue from:
-
-- a failure of dynamics  
-  to
-- a misidentification of admissibility
+This resolves the pair-observable construction.
+It leaves the independent capacity-to-rate dynamics unresolved.
 
 
 # Structural Role of O16
 
-O16 completes the chain:
+O16 extends the chain:
 
 - **O12–O13**: exact block extraction and asymptotics
 - **O14**: observable mismatch identified
 - **O15**: scalar-to-block failure localised
-- **O16**: correct observable identified (fibre level)
+- **O16**: conjugate-pair observable constructed at fibre level
 
 So O16 establishes:
 
-- the issue is **not dynamic**
-- the issue is **not spectral**
-- the issue is **observational (definition of admissibility)**
+- the pair exponent is an exact consequence of conjugate-profile proportionality
+- the fibre interpretation remains structurally motivated
+- the pair exponent is not automatically the exponent of a native growth equation
 
 
 # What O16 Adds
 
 - identification of the **pair observable**
 - proof of **exponent doubling**
-- demonstration of a **spectral lower bound**
+- finite-window comparison with the phenomenological range
 - elimination of aggregation-based explanations (via O15)
 - clarification of the role of **normalisation factors**
-- restoration of consistency with the phenomenological scale
+- exact separation of the pair-exponent result from the capacity-to-rate prescription
 
 
 # Outcome
 
-O16 resolves the core S2 discrepancy at leading order.
+O16 resolves the exact pair-exponent component of the S2 discrepancy.
 
 The exact Weil-block framework:
 
-- reproduces the correct exponent scale
-- requires no modification of O6–O7 at the structural level
-- only requires a corrected observable
+- produces an exactly doubled pair exponent
+- gives a convention-sensitive numerical overlap with the comparison range
+- does not supply the O6--O7 growth carrier on the Heisenberg substrate
 
 
 # Residual Open Problem
 
-While the lower bound is now understood, the **upper bound**
-of the phenomenological range remains open.
-
-The pair spectrum extends beyond:
-$\delta_{\mathrm{pair}} > 10.6$
-
-but observed configurations satisfy:
-$\delta_{\mathrm{pair}} \in [7.4, 10.6].$
-
-The selection mechanism is not spectral.
+The asymptotic pair exponent and its relation to any native growth process remain open.
+The finite-window values do not establish either endpoint of a structural admissible spectrum.
 
 
 # Emerging Direction (O17)
@@ -237,13 +226,16 @@ This defines the next programme step.
 2. **Relation between δ and persistence length**  
    Connect exponent values to n_active and trajectory shape
 
-3. **Derivation of fibre structure from Π**  
-   Establish conjugate pairing from first principles
+3. **Derivation of fibre structure from Π**
+   Establish conjugate pairing from first principles.
 
-4. **Extension to higher-rank structures**  
+4. **Native capacity-to-rate bridge**
+   Construct a growth process carrying the pair observable, or state an explicitly cross-substrate hypothesis.
+
+5. **Extension to higher-rank structures**
    Investigate multi-branch fibres beyond pairs
 
-5. **Phenomenological mapping**  
+6. **Phenomenological mapping**
    Relate positions within [7.4, 10.6] to particle hierarchy
 
 
@@ -252,7 +244,7 @@ This defines the next programme step.
 The programme is now:
 
 - free of derivational ambiguity (**O15**)
-- equipped with the correct observable (**O16**)
+- equipped with the conjugate-pair observable (**O16**)
 - consistent with phenomenological scales
 
 Remaining work is:
