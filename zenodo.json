@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/spectral/program/o16/",
   "main_tex": "tex/SpectralO16.tex",
   "zenodo_id": 19298427,
-  "doi": "10.5281/zenodo.19298427"
+  "doi": "10.5281/zenodo.19298427",
+  "notes": "Version history: v1.0/v1.0.1 asserted a finite-window baseline (delta_exact ~ 3.72 +/- 0.06) and a numeric conjugate-pair ratio r(c,q) in {1,2,3,4}, both later found unsourced or unreproducible. v1.1 withdrew both and replaced the central claim with a conditional, algebraic exponent-doubling remark, retaining the withdrawn table/figure in the PDF for provenance, marked non-reproducible. v1.2 (this version) rewrites the PDF body to state only the current, established content, with no narrative of what was withdrawn; the withdrawn table and figure are removed from the PDF. No mathematical content changed between v1.1 and v1.2. Full history: https://github.com/Cosmochrony/spectral-o16"
 }

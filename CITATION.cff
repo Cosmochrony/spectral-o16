@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you cite this work, please use the metadata from this file."
 title: "Fibre Admissibility Hypotheses and Conditional Pair-Exponent Doubling"
 type: software
-version: "1.1"
+version: "1.2"
 authors:
   - family-names: "Beau"
     given-names: "Jérôme"
