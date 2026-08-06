@@ -33,7 +33,7 @@
 \author{J.~Beau\\
 \small Independent Researcher}
 
-\date{2026\\Version 1.0.1}
+\date{2026\\Version 1.1}
 
 \begin{document}
 
@@ -41,28 +41,44 @@
 
   \begin{abstract}
     \vspace{0.5em}
-    The O-series has established that the Weil-block capacity exponent
-    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ falls systematically
-    below the phenomenological comparison range
-    $\delta \in [7.4, 10.6]$, and that no reweighting of block data
-    can raise the exponent.
-    The present paper identifies a distinct fibre-level observable.
-    The non-injectivity of the projection~$\Pi$, established from the
-    Born--Infeld constraint, implies that admissibility is a property
-    of complete fibres of~$\Pi$, not of individual preimage configurations.
-    In the Weil realisation of $\Heis(\ZqZ)$, these fibres are organised
-    as conjugate pairs $\{c, q-c\}$ under the exact identity
-    $\rho_{q-c} = \overline{\rho_c}$.
-    The pair-level observable $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$
-    follows a clean power law with exponent $\delta_{\mathrm{pair}} = 2\,\delta_c
-    \approx 7.44 \pm 0.12$, confirmed numerically with $R^2 > 0.9999$ and a
-    factor-of-six reduction in slope variance under the production
-    $\log(n+1)$ fitting convention.
-    On the same finite windows, conversion to the paper-level $\log n$
-    definition gives approximately $6.6$--$6.9$.
-    The exact doubling is a fibre-side result; it does not derive a native
-    Heisenberg growth process carrying the pair observable and therefore
-    does not establish the capacity-to-rate transfer.
+    This is a corrective revision of the version published as v1.0/v1.0.1.
+    That draft opened by asserting an established O-series baseline
+    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a corollary ruling out
+    any reweighting resolution; neither claim can be traced to any source in
+    the current, corrected O12--O15 texts, and both are withdrawn
+    (Section~\ref{sec:context}).
+    The draft's central proposition identified its scalar per-block
+    redundancy $\sigma_c(n)$, indexed by $c \in \Fq$, with the O12/O13
+    pipeline's exact block observable $\Sigma_n^{(c_1,c_2,c_3)}$, indexed by a
+    generic triple.
+    This identification is not established, and the specific claim it
+    supported --- a conjugate-pair ratio $r(c,q) \in \{1,2,3,4\}$ varying by
+    block --- would directly contradict O12's own proved exact fact
+    $V_n^{(c)} = V_n^{(-c)}$ if the two observables were the same
+    (Section~\ref{sec:sigma_symmetry}).
+    Both the baseline and the proposition are accordingly withdrawn as
+    unverified, along with the numerical table and figure built on them,
+    for which this repository has never carried reproduction code.
+    What survives, independently of any pipeline identification, is the
+    underlying representation theory: the Weil representation obeys the
+    exact conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the
+    Cauchy--Schwarz inequality bounds any pair-product built from it.
+    The paper's remaining content is restated as a conditional, purely
+    algebraic remark: \emph{if} a per-block observable $\sigma_c(n)$ has a
+    conjugate-pair ratio $r(c,q) = \sigma_{q-c}(n)/\sigma_c(n)$ independent of
+    the shell index~$n$, \emph{then} the pair-level product
+    $\sigma_c(n)\,\sigma_{q-c}(n)$ has log-log slope exactly double that of
+    $\sigma_c(n)$ --- a direct consequence of differentiating a product of
+    two power laws with a constant ratio, not a numerical discovery.
+    Applied to the real O12/O13 pipeline, where the exact conjugate-block
+    identity forces $r(c,q) \equiv 1$, the pair observable reduces
+    definitionally to $\sigma_c(n)^2$: no doubling phenomenon remains to
+    explain.
+    No value of $\delta_{\mathrm{pair}}$ or of the O7 prescription for
+    $\bstar$ is asserted in this revision.
+    The withdrawn baseline and proposition were cited downstream in
+    O17--O21, whose status is addressed separately
+    (Section~\ref{sec:implications}).
   \end{abstract}
 
   \paragraph{Keywords.}
@@ -81,27 +97,52 @@
   capacity exponent~$\delta$ governing projective dynamics on discrete
   Heisenberg group Cayley graphs over $\ZqZ$ for prime~$q$.
   Papers O12--O15~\cite{Beau2026a16,Beau2026a17,Beau2026a18,Beau2026a19}
-  established the following chain of results.
+  have each undergone a corrective revision since this paper's original
+  draft; what follows states their current, corrected content, not the
+  content originally cited.
   (O12~\cite{Beau2026a16}, O13~\cite{Beau2026a17},
   O14~\cite{Beau2026a18}, and O15~\cite{Beau2026a19} are referenced
   individually where precision is required.)
 
   \begin{enumerate}
-    \item The Weil-block redundancy $\sigma_c(n)$ measured at BFS shell~$n$
-    for a block of character~$c$ decays as a power law
-    $\sigma_c(n) \sim C_c\, n^{-\delta_c}$ in the pre-saturation regime.
+    \item The exact block observable $\Sigma_n^{(c_1,c_2,c_3)}$, measured at
+    BFS shell~$n$ for a generic triple $(c_1,c_2,c_3) \in (\ZqZ)^3$, decays
+    in the pre-saturation regime.
+    O12's corrective revision shows the finite-$q$ fitted slopes reported
+    at $q \in \{29,61,101,151,211\}$ are crossover statistics of an exact
+    saturation-depth law, not estimates of an intrinsic asymptotic
+    exponent; the unfolded intrinsic exponent is exactly~$3$.
 
-    \item The arithmetic mean $\bar\sigma(n) = m_{\mathrm{block}}^{-1}
-    \sum_c \sigma_c(n)$ is the observable currently extracted by the pipeline.
-    The exponent $\dhat$ fitted from $\bar\sigma(n)$ satisfies
-    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ across the sampled
-    $q \in \{29, 61, 101, 151, 211\}$.
+    \item \textbf{Withdrawn.}
+    The original draft of this paper asserted a baseline
+    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$, attributed to
+    ``papers O12--O15,'' as the exponent fitted from the block-averaged
+    observable.
+    This value cannot be traced to any table in the current O12, O13, or
+    O14 texts, nor in O15's per-prime column, and is withdrawn for lack of
+    a source.
 
-    \item This value is structurally below the phenomenological target
-    $\delta \in [7.4, 10.6]$.
-    O15 Corollary~4.8~\cite{Beau2026a19} (aggregation no-go) establishes that no reweighting
-    of block data raises $\dhat$ above $\dhat_{\mathrm{exact}}$,
-    eliminating arithmetic corrections as a resolution.
+    \item \textbf{Withdrawn.}
+    The original draft cited an unconditional form of O15's aggregation
+    corollary (``no reweighting of block data can raise $\dhat$ above
+    $\dhat_{\mathrm{exact}}$'') as eliminating arithmetic corrections as a
+    resolution.
+    O15's own corrective revision found this unconditional form false as
+    originally stated, and constructed an explicit counterexample: weights
+    concentrating mass asymmetrically across the fitting window can exceed
+    $\dhat_{\mathrm{exact}}$.
+    The corrected corollary is narrower on three counts: it applies only
+    to O15's specific dynamical weights $w_c(n)$, not to reweighting in
+    general; its conclusion holds only when $\log(1+V_n)$ has non-negative
+    OLS slope against $\log n$ over the fitting window, a condition O15
+    identifies as open and does not verify at any tested prime; and it
+    bounds $\alpha_{\mathrm{dyn}}$ against $\dhat_{\mathrm{exact}}$, not
+    against the withdrawn $3.72\pm0.06$ baseline of item~2.
+    Since this paper's own observable $\sigma_c(n)$ is, as shown in
+    Section~\ref{sec:sigma_symmetry}, not established to be
+    $\Sigma_n^{(c_1,c_2,c_3)}$, O15's corollary --- in either form --- does
+    not apply to it, and the citation is withdrawn rather than merely
+    narrowed.
   \end{enumerate}
 
   The present paper identifies a fibre-level observable through a
@@ -114,12 +155,13 @@
   The result below constructs a proposed fibre-level observable at
   the level of \emph{conjugate pairs}, without modifying the
   underlying construction.
-  A key diagnostic is that a cleaner finite-window power law emerges
-  at the pair level: at the level of individual blocks, the log-log
-  scaling exhibits significant drift (local-slope standard deviation
-  $\approx 0.98$), while the pair-level observable achieves a
-  six-fold reduction in slope variance and a power law with
-  $R^2 > 0.9999$.
+  The original draft reported a diagnostic in support of this
+  construction --- a six-fold reduction in slope variance and
+  $R^2 > 0.9999$ at the pair level, against significant drift
+  (local-slope standard deviation $\approx 0.98$) at the single-block
+  level --- computed from the same $\sigma_c(n)$ whose identification
+  with $\Sigma_n^{(c_1,c_2,c_3)}$ this revision withdraws; the diagnostic
+  is withdrawn with it (Section~\ref{sec:validation}).
 
   \section{Non-injectivity and fibre structure}
   \label{sec:fibre_structure}
@@ -173,37 +215,65 @@ whose consequences are derived and tested independently.
   \section{Exact symmetry of the sigma profiles}
   \label{sec:sigma_symmetry}
 
-  Let $\sigma_c(n)$ denote the mean Weil-block redundancy at BFS shell~$n$
-  for the block of character~$c$, as measured by the O12/O13
-  pipeline~\cite{Beau2026a16,Beau2026a17}.
-  The following result is an exact consequence of~\eqref{eq:weil_conj}.
+  Let $\sigma_c(n)$ denote the mean per-block redundancy at BFS shell~$n$
+  used throughout this paper, for $c \in \Fq$ a scalar central character.
+  The original draft identified this quantity with the O12/O13 pipeline's
+  exact block observable $\Sigma_n^{(c_1,c_2,c_3)}$~\cite{Beau2026a16,Beau2026a17},
+  indexed by a generic triple $(c_1,c_2,c_3) \in (\ZqZ)^3$ rather than by a
+  scalar.
+  This identification is not established: this paper's $c$ ranges over
+  $\Fq$, of order $q-1$, while O12/O13's index space is that of the
+  triple's projective class $(\alpha,\beta)$; no map between the two is
+  given or derived here.
+  The results below concerning $\sigma_c(n)$ should accordingly be read as
+  pertaining to this paper's own, separately defined observable, not as
+  statements about the O12/O13 pipeline's $\Sigma_n^{(c_1,c_2,c_3)}$, until
+  that identification is either established or the two are shown unrelated.
 
-  \begin{proposition}[Proportionality of conjugate sigma profiles]
+  \begin{proposition}[Proportionality of conjugate sigma profiles --- withdrawn]
     \label{prop:sigma_ratio}
-    For all primes~$q$ and all $c \in \Fq$,
+    The original draft asserted, for all primes~$q$ and all $c \in \Fq$,
     \begin{equation}
       \sigma_{q-c}(n) = r(c,q)\,\sigma_c(n) \quad \text{for all } n \geq 1,
       \label{eq:sigma_ratio}
     \end{equation}
-    where $r(c,q) \in \{1, 2, 3, 4\}$ is independent of the shell index~$n$.
+    with $r(c,q) \in \{1, 2, 3, 4\}$ independent of the shell index~$n$,
+    reported to hold to machine precision for all tested pairs.
+    This claim is withdrawn.
   \end{proposition}
 
   \noindent
-  The factor $r(c,q)$ encodes the relative Gram-Schmidt weight of the
-  dual block, determined by the initial conditions $(b_1, b_2)$ of each
-  block sample.
-  Identity~\eqref{eq:sigma_ratio} holds to machine precision
-  ($|\sigma_{q-c}(n)/\sigma_c(n) - r(c,q)| < 10^{-14}$) for all
-  tested pairs and all shells in the fit window, and constitutes an
-  independent consistency check of the pipeline.
+  The withdrawal has two independent grounds.
+  First, \emph{if} $\sigma_c(n)$ were the O12/O13 pipeline's
+  $\Sigma_n^{(c_1,c_2,c_3)}$ --- the identification the original draft
+  assumed --- Proposition~\ref{prop:sigma_ratio} would directly contradict
+  O12's own proved exact fact
+  \[
+    V_n^{(c_1,c_2,c_3)} = V_n^{(-c_1,-c_2,-c_3)}
+    \quad \text{exactly, for every prime, every triple, every complete shell,}
+  \]
+  which forces the conjugate-pair ratio to be identically~$1$, not a
+  variable integer in $\{1,2,3,4\}$.
+  Second, independently of that identification, this repository has never
+  carried code computing $\sigma_c(n)$ or $r(c,q)$
+  (Section~\ref{sec:validation}): the claim of machine-precision agreement
+  cannot be reproduced or checked from the materials in this repository.
+  Proposition~\ref{prop:sigma_ratio} is accordingly an \emph{unreproducible
+  claim}, not a verified result, and is withdrawn rather than merely
+  qualified.
 
-  \begin{remark}[Independence from Cosmochrony hypotheses]
-Proposition~\ref{prop:sigma_ratio} and its numerical verification
-are independent of any Cosmochrony-specific hypothesis.
-They follow from the representation theory of $\Heis(\ZqZ)$
-and the structure of the Gram-Schmidt process.
-This makes the exponent doubling established in
-Section~\ref{sec:doubling} a robust result.
+  \begin{remark}[What remains established]
+Independently of Proposition~\ref{prop:sigma_ratio}, two facts hold
+unconditionally.
+The conjugation identity~\eqref{eq:weil_conj} is standard representation
+theory of the Weil representation, needing no pipeline verification.
+And for any well-defined non-negative observable $\sigma_c(n)$ whatsoever,
+the Cauchy--Schwarz inequality gives
+$\langle\sigma_c\sigma_{q-c}\rangle \leq \langle\sigma_c\rangle^2$, with
+equality only when all $\sigma_c$ are equal --- a generic fact used again
+in Section~\ref{sec:doubling}.
+Neither fact requires or supports the specific numeric form of
+Proposition~\ref{prop:sigma_ratio}.
   \end{remark}
 
   \section{The pair-level observable and exponent doubling}
@@ -217,10 +287,11 @@ Section~\ref{sec:doubling} a robust result.
     The corresponding fibre-level observable is the joint admissibility of the
     conjugate pair:
     \begin{equation}
-      \sigma_{\mathrm{pair}}(n) \;:=\; \sigma_c(n)\,\sigma_{q-c}(n)
-      \;=\; r(c,q)\,\sigma_c(n)^2.
+      \sigma_{\mathrm{pair}}(n) \;:=\; \sigma_c(n)\,\sigma_{q-c}(n).
       \label{eq:sigma_pair}
     \end{equation}
+    This definition alone does not simplify to $r(c,q)\,\sigma_c(n)^2$:
+    that reduction used Proposition~\ref{prop:sigma_ratio}, now withdrawn.
     The pair-level mean redundancy is:
     \begin{equation}
       R_n^{\mathrm{pair}} \;:=\; \frac{1}{m_{\mathrm{pairs}}}
@@ -233,46 +304,63 @@ Section~\ref{sec:doubling} a robust result.
 $R_n^{\mathrm{pair}} \neq \bar\sigma(n)^2$ in general.
 The Cauchy--Schwarz inequality gives
 $\langle \sigma_c \sigma_{q-c}\rangle \leq \langle\sigma_c\rangle^2$,
-with equality only when all $\sigma_c$ are equal.
-In the pipeline data $\bar\sigma^2$ and $R_n^{\mathrm{pair}}$ differ
-by factors ranging from~$0.15$ to~$10.5$ across the fit window
-(cf.\ Section~\ref{sec:validation}), confirming that they are
-structurally distinct observables.
+with equality only when all $\sigma_c$ are equal, so the two observables
+are structurally distinct whenever $\sigma_c$ varies across the block
+sample.
+The original draft additionally reported specific factors (ranging from
+$0.15$ to~$10.5$ across the fit window) by which they differ in the
+pipeline data; that number is withdrawn along with
+Proposition~\ref{prop:sigma_ratio}, on the same two grounds
+(Section~\ref{sec:sigma_symmetry}).
     \end{remark}
 
-  \subsection{Exponent doubling}
+  \subsection{Exponent doubling --- conditional statement}
     \label{subsec:doubling}
 
-    Since $r(c,q)$ is independent of~$n$, the log-log slope of
-    $\sigma_{\mathrm{pair}}(n)$ is exactly twice that of $\sigma_c(n)$:
+    \emph{If} the ratio $r(c,q) := \sigma_{q-c}(n)/\sigma_c(n)$ happens to
+    be independent of the shell index~$n$ for the observable in question
+    --- the content of Proposition~\ref{prop:sigma_ratio}, withdrawn as an
+    established fact but not thereby shown false as a hypothesis --- then
+    the log-log slope of $\sigma_{\mathrm{pair}}(n)$ is exactly twice that
+    of $\sigma_c(n)$:
     \begin{equation}
       \delta_{\mathrm{pair}} \;:=\;
       -\frac{\mathrm{d}\log\sigma_{\mathrm{pair}}(n)}{\mathrm{d}\log n}
       \;=\; \delta_c + \delta_{q-c} \;=\; 2\,\delta_c.
       \label{eq:doubling}
     \end{equation}
-    Substituting the empirical value $\delta_{c,\min} \approx 3.72 \pm 0.06$
-    (measured across $q \in \{29, \ldots, 211\}$):
-    \begin{equation}
-      \delta_{\mathrm{pair},\min} \;=\; 2\,\delta_{c,\min}
-      \;\approx\; 7.44 \pm 0.12.
-      \label{eq:delta_pair}
-    \end{equation}
-    This lies at the lower boundary of the phenomenological
-    comparison range~$[7.4, 10.6]$ under the production
-    $\log(n+1)$ convention.
-    On the same finite windows, conversion to the paper-level
-    $\log n$ definition gives approximately $6.6$--$6.9$, below
-    that range~\cite{Beau2026sgn}.
+    This is a direct consequence of differentiating a product of two power
+    laws with a constant ratio; it carries no numerical content until a
+    value of $\delta_c$ is supplied for a specific, sourced $\sigma_c(n)$.
+    No such value is supplied in this revision: the original draft's
+    substitution of $\delta_{c,\min} \approx 3.72 \pm 0.06$, and the
+    resulting $\delta_{\mathrm{pair},\min} \approx 7.44 \pm 0.12$ and its
+    comparison to the phenomenological range $[7.4, 10.6]$, are withdrawn
+    together with the baseline itself (Section~\ref{sec:context}).
+    Applied instead to the real O12/O13 pipeline, where the exact
+    conjugate-block identity of Section~\ref{sec:sigma_symmetry} forces
+    $r(c,q) \equiv 1$, equation~\eqref{eq:sigma_pair} reduces
+    definitionally to $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)^2$: the
+    hypothesis of this subsection holds trivially, and
+    $\delta_{\mathrm{pair}} = 2\,\delta_c$ is then a restatement of
+    squaring a power law, not a doubling phenomenon requiring the fibre
+    construction to explain.
 
-  \section{Numerical validation}
+  \section{Numerical validation --- reclassified as non-reproducible}
   \label{sec:validation}
 
-  Table~\ref{tab:pairs} summarises the pair-level fits for $q = 29$
-  and $q = 61$, the two primes for which both members of a conjugate
-  pair appear in the block sample.
-  Figure~\ref{fig:pair_q61} displays the comparison between the
-  single-block and pair-level observables for $q = 61$.
+  This repository has never contained code computing $\sigma_c(n)$,
+  $r(c,q)$, or the fits below: \texttt{code/} holds only the compiled
+  figure file, not a generating script.
+  Table~\ref{tab:pairs} and Figure~\ref{fig:pair_q61} are therefore
+  reproduced below exactly as reported in the original draft (v1.0/v1.0.1),
+  for provenance, and are \textbf{not} asserted as established results in
+  this revision.
+  Their numeric content --- the individual $\delta_c$ values, the
+  $r(c,q)$ column, and the comparison to the phenomenological band --- rests
+  on the withdrawn identification and baseline of
+  Sections~\ref{sec:context} and~\ref{sec:sigma_symmetry}, and cannot be
+  checked against any script in this repository.
 
   \begin{table}[ht]
     \centering
@@ -286,60 +374,80 @@ structurally distinct observables.
       61 & $(1,\;60)$  & $3$ & $3.7559$ & $7.5119$ & $2.0000$ & $0.99996$ \\
       \bottomrule
     \end{tabular}
-    \caption{Pair-level capacity exponents for $q = 29$ and $q = 61$.
-    The ratio $\delta_{\mathrm{pair}}/\delta_c = 2.0000$ is confirmed
-    to machine precision in both cases.
-    The fit quality $R^2 > 0.9999$ and the reduction of the local-slope
-    standard deviation from $\approx 0.98$ (single block) to $< 0.17$
-      (pair) demonstrate that the power-law scaling of
-      $\sigma_{\mathrm{pair}}(n)$ is significantly cleaner than that of
-      the single-block observable~$\bar\sigma(n)$.}
+    \caption{\textbf{As originally reported, not reproducible from this
+    repository.}
+    Pair-level capacity exponents for $q = 29$ and $q = 61$, from the
+    original draft.
+    The individual $\delta_c$ values rest on the withdrawn
+    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ baseline
+    (Section~\ref{sec:context}); the $r(c,q)$ column rests on
+    Proposition~\ref{prop:sigma_ratio}, withdrawn
+    (Section~\ref{sec:sigma_symmetry}).
+    The ratio $\delta_{\mathrm{pair}}/\delta_c = 2.0000$ is consistent with
+    the conditional statement of equation~\eqref{eq:doubling} but does not
+    independently establish it, since both columns derive from the same
+    unreproducible fit.}
     \label{tab:pairs}
   \end{table}
 
   \begin{figure}[ht]
     \centering
     \includegraphics[width=\linewidth]{../code/pair_observable_q29_q61}
-    \caption{Comparison of single-block and pair-level observables for
-      $q = 29$ (top row) and $q = 61$ (bottom row).
+    \caption{\textbf{As originally reported, not reproducible from this
+    repository.}
+    Comparison of single-block and pair-level observables for
+      $q = 29$ (top row) and $q = 61$ (bottom row), from the original
+      draft.
       \emph{Left panels}: log-log profiles of $\bar\sigma(n)$ and
       $\sigma_{\mathrm{pair}}(n)$, with power-law fits.
       \emph{Right panels}: local log-log slopes in the respective fit
       windows $[n_0, n_1]$.
       The shaded green band marks the phenomenological comparison
-      range $[-10.6, -7.4]$ under the production convention.
-      In both cases the pair-level slopes lie entirely within this band,
-      with variance reduced by a factor~$\sim 6\times$ relative to the
-      single-block observable.
-      The power-law scaling becomes well-defined only at the pair level.}
+      range $[-10.6, -7.4]$ under the production convention, against
+      which the original draft compared the (withdrawn) pair-level
+      slopes.
+      No script in this repository regenerates this figure from a
+      defined $\sigma_c(n)$; it is retained for provenance only.}
     \label{fig:pair_q61}
   \end{figure}
 
   \section{Main result and epistemic status}
   \label{sec:main}
 
-  \begin{proposition}[Fibre admissibility]
+  \begin{proposition}[Fibre admissibility --- conditional restatement]
     \label{prop:main}
     Let $\Pi$ carry the parity involution~\eqref{eq:parity}.
     In the Weil realisation of $\Heis(\ZqZ)$, the fibres of~$\Pi$
     are organised as conjugate pairs $\{c, q-c\}$ under~\eqref{eq:weil_conj}.
     The proposed fibre-level observable, defined on complete fibres, is
-    $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$,
-    with fitted finite-window exponent
-    $\delta_{\mathrm{pair}} = 2\,\delta_c \approx 7.44$
-    under the production fitting convention.
+    $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$.
+    \emph{If} a per-block observable $\sigma_c(n)$ is specified for which
+    the conjugate-pair ratio $r(c,q)$ is independent of~$n$, \emph{then}
+    $\delta_{\mathrm{pair}} = 2\,\delta_c$
+    (equation~\eqref{eq:doubling}).
+    No numerical value of $\delta_{\mathrm{pair}}$ is asserted here: the
+    original draft's $\approx 7.44$ rested on
+    Proposition~\ref{prop:sigma_ratio} and the baseline of
+    Section~\ref{sec:context}, both withdrawn.
   \end{proposition}
 
   \begin{remark}[What is derived vs.\ what is hypothesised]
     \label{rem:status}
-    The following chain is derived: identity~\eqref{eq:weil_conj} is exact
-    representation theory; Proposition~\ref{prop:sigma_ratio} is a
-    numerical consequence verified to machine precision;
-    equation~\eqref{eq:doubling} follows by differentiation.
-    The identification of conjugate pairs with the fibres of~$\Pi$ is a
-    structurally motivated hypothesis, consistent with the Born--Infeld
-    non-injectivity but not yet derived from first principles within
-    the full Cosmochrony framework.
+    The following is derived unconditionally: identity~\eqref{eq:weil_conj}
+    is exact representation theory; the Cauchy--Schwarz bound of
+    Section~\ref{sec:sigma_symmetry} holds for any non-negative observable;
+    equation~\eqref{eq:doubling} follows from differentiation, given its
+    stated premise.
+    Two things are open, not one.
+    The identification of conjugate pairs with the fibres of~$\Pi$ remains
+    a structurally motivated hypothesis, consistent with the Born--Infeld
+    non-injectivity but not derived from first principles within the full
+    Cosmochrony framework.
+    Independently of that identification, whether \emph{any} sourced,
+    reproducible $\sigma_c(n)$ satisfies equation~\eqref{eq:doubling}'s
+    premise --- an $n$-independent conjugate-pair ratio --- is itself now
+    open: Proposition~\ref{prop:sigma_ratio}, the original draft's claim to
+    this effect, is withdrawn (Section~\ref{sec:sigma_symmetry}).
   \end{remark}
 
   \begin{remark}[Absence of model modification]
@@ -352,59 +460,79 @@ This statement does not identify a native growth equation for that
 observable.
   \end{remark}
 
-  \begin{remark}[Amplitude factor $r(c,q)$]
-The integer $r(c,q) \in \{1,2,3,4\}$ shifts the amplitude of
-$\sigma_{\mathrm{pair}}$ without affecting the
-exponent~$\delta_{\mathrm{pair}}$.
-It is physically inert for mass-scale extraction.
-Its arithmetic origin~---~likely related to quadratic Gauss sums
-and character multiplicities of the Weil representation~---~is
-an open problem.
+  \begin{remark}[Amplitude factor $r(c,q)$ --- withdrawn]
+The original draft claimed an integer $r(c,q) \in \{1,2,3,4\}$ shifting
+the amplitude of $\sigma_{\mathrm{pair}}$ without affecting
+$\delta_{\mathrm{pair}}$, and speculated an arithmetic origin in
+quadratic Gauss sums and character multiplicities.
+Both the specific range and the speculated origin depend on
+Proposition~\ref{prop:sigma_ratio}, withdrawn.
+On the real O12/O13 pipeline, the exact conjugate-block identity gives
+$r(c,q) \equiv 1$ (Section~\ref{sec:sigma_symmetry}), leaving no amplitude
+factor to explain.
   \end{remark}
 
   \section{Implications for the O-series programme}
   \label{sec:implications}
 
-  \paragraph{Corrected pipeline.}
-    The O12/O13 pipeline~\cite{Beau2026a16,Beau2026a17} should be modified to sample conjugate pairs
-    $(c, q-c)$ rather than individual blocks.
-    For each pair, compute $\sigma_c(n) \cdot \sigma_{q-c}(n)$ and
-    extract~$\delta$ from the resulting profile.
-    The expected value is $\delta_{\mathrm{pair}} \approx 7.5$
-    under the production convention.
+  \paragraph{Corrected pipeline --- withdrawn recommendation.}
+    The original draft recommended modifying the O12/O13
+    pipeline~\cite{Beau2026a16,Beau2026a17} to sample conjugate pairs
+    $(c, q-c)$ and extract $\delta_{\mathrm{pair}} \approx 7.5$ from
+    $\sigma_c(n)\cdot\sigma_{q-c}(n)$.
+    This recommendation is withdrawn, on two grounds.
+    Its expected value rested on the withdrawn baseline
+    (Section~\ref{sec:context}).
+    And on the real pipeline, the exact conjugate-block identity
+    (Section~\ref{sec:sigma_symmetry}) gives
+    $\Sigma_n^{(-c_1,-c_2,-c_3)} = \Sigma_n^{(c_1,c_2,c_3)}$ exactly, so
+    sampling the conjugate pair $(c,q-c)$ would not sample independent
+    data: it would compute $\Sigma_n^{(c_1,c_2,c_3)}{}^2$, the same block
+    squared.
+    No pipeline modification is indicated.
 
-  \paragraph{Relation to O15 scenarios~\cite{Beau2026a19}.}
-    The functional-form component of the C1 scenario of
-    O15~\cite{Beau2026a19} is confirmed:
-    $\sigma_{\mathrm{pair}}(n)$ follows the same power-law
-    form as $\sigma_c(n)$, with exponent doubled by the fibre structure.
-    No modified functional form is required for this exact pair-exponent
-    statement.
-    This does not confirm the insertion of the exponent into the O7
-    growth law.
+  \paragraph{Relation to O15~\cite{Beau2026a19} --- withdrawn.}
+    The original draft claimed the functional-form component of an O15
+    scenario was ``confirmed'' by $\sigma_{\mathrm{pair}}(n)$ following the
+    same power-law form as $\sigma_c(n)$.
+    That claim rested on Table~\ref{tab:pairs} and
+    Figure~\ref{fig:pair_q61}, now reclassified as non-reproducible
+    (Section~\ref{sec:validation}), and is withdrawn with them.
+    It in any case would not, and does not here, confirm the insertion of
+    any exponent into the O7 growth law.
 
-  \paragraph{Relation to $\bstar$.}
-    If one externally identifies the O7 reduced-model redundancy with
-    the Heisenberg pair observable, the cross-substrate prescription
-    evaluates the O7 expression at
-    $\delta = \delta_{\mathrm{pair}}$ rather than at the individual-block
-    exponent.
-    Under that additional hypothesis, the production value gives
-    \begin{equation}
-      \beta^*_{\mathrm{presc}}
-      \;:=\; \frac{1}{7.44 + 0.5} \;\approx\; 0.127,
-    \end{equation}
-    a phenomenological coincidence check rather than a native
-    derivation.
-    The fixed Heisenberg Cayley graph has frontier $N^{3/4}$, not the
-    square-root frontier of O7, and no pair-capacity growth carrier is
-    defined in the corpus~\cite{Beau2026sgn}.
+  \paragraph{Relation to $\bstar$ --- withdrawn.}
+    The original draft's numeric prescription
+    $\beta^*_{\mathrm{presc}} := 1/(7.44+0.5) \approx 0.127$ rested on the
+    withdrawn $\delta_{\mathrm{pair}} \approx 7.44$ and is withdrawn with
+    it.
+    Independently of that number, the fixed Heisenberg Cayley graph has
+    frontier $N^{3/4}$, not the square-root frontier of O7, and no
+    pair-capacity growth carrier is defined in the
+    corpus~\cite{Beau2026sgn}; this paragraph's cross-substrate
+    prescription would remain a phenomenological coincidence check, not a
+    native derivation, even were a sourced $\delta_{\mathrm{pair}}$
+    available.
+
+  \paragraph{Downstream propagation: O17--O21.}
+    The withdrawn baseline $\dhat_{\mathrm{exact}} \approx 3.72\pm0.06$
+    and the withdrawn Proposition~\ref{prop:sigma_ratio} were cited,
+    directly or through this paper, in O17--O21.
+    Their correctness does not follow from this paper's correction --- each
+    must be reassessed on its own text --- but any argument in that range
+    that relies on either withdrawn item without independent support no
+    longer has the support it cites here.
+    O17's corrective revision is addressed as a separate, standalone
+    paper; O18--O21 are audited separately.
 
   \paragraph{Open direction.}
     A derivation of the parity involution~\eqref{eq:parity} from first
     principles within Cosmochrony would promote the fibre interpretation
     in Proposition~\ref{prop:main}.
-    It would not by itself close the separate capacity-to-rate bridge.
+    It would not by itself close the separate capacity-to-rate bridge, nor
+    would it, alone, supply a sourced $\sigma_c(n)$ satisfying
+    equation~\eqref{eq:doubling}'s premise --- a distinct, independently
+    open question (Remark~\ref{rem:status}).
 
   \section*{Acknowledgements}
 

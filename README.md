@@ -1,272 +1,132 @@
-This repository contains the source of the **O16** Cosmochrony paper  
+This repository contains the source of the **O16** Cosmochrony paper
 *Fibre Admissibility and Exact Pair-Exponent Doubling*.
 
-**Version 1.0.1.** The exact conjugate-pair relation and exponent doubling are retained.
-The numerical overlap with the capacity-to-rate target is convention-sensitive and is not a native
-Heisenberg derivation of the cascade exponent.
+**Version 1.1 — corrective revision.** This version withdraws the numerical baseline and the central
+proposition of v1.0/v1.0.1, which were found to be unsourced and unreproducible respectively. What
+survives is a conditional, purely algebraic remark about exponent doubling, plus the genuine
+representation-theoretic conjugation identity it was built on. See **Correction (v1.1)** below.
 
-This work extends the **spectral admissibility sub-programme** by resolving the
-open problem left by **O15**:
-
-> What is the correct dynamic observable in the exact Weil-block regime?
+This work extends the **spectral admissibility sub-programme** by proposing a fibre-level observable
+in the exact Weil-block regime, defined on conjugate pairs $\{c, q-c\}$.
 
 
-# Context
+# Correction (v1.1)
 
-**O15** established that:
+The original draft (v1.0/v1.0.1) opened by asserting an established O-series baseline
+$\hat\delta_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a corollary (O15's aggregation no-go) ruling
+out any reweighting resolution. Neither claim can be traced to any source in the current, corrected
+O12–O15 texts:
 
-- the scalar growth law of **O6–O7** does not transfer to exact Weil blocks
-- the block-mean observable
-  $\bar\Sigma_n = \frac{1}{q-1}\sum_c \Sigma_n^{(c)}$
-  is not the correct dynamic observable
-- no aggregation or reweighting of blocks can recover the target range
-  $\delta \in [7.4, 10.6]$
+- the $3.72 \pm 0.06$ figure appears in no table of the current O12, O13, or O14 texts, nor in O15's
+  per-prime column;
+- O15's own corrective revision found the unconditional no-go **false as originally stated**, with an
+  explicit counterexample, and replaced it with a narrower, conditional corollary that applies only to
+  O15's specific dynamical weights and whose hypothesis is not verified at any tested prime.
 
-This left a single well-posed problem:
+Both are withdrawn.
 
-> identify a fibre-level observable in the exact-block regime and determine its exponent.
+The paper's central proposition (conjugate-pair sigma profiles differ by an integer factor
+$r(c,q)\in\{1,2,3,4\}$, "confirmed to machine precision") identified its scalar observable $\sigma_c(n)$,
+indexed by $c \in (\mathbb{Z}/q\mathbb{Z})^*$, with O12/O13's exact block observable
+$\Sigma_n^{(c_1,c_2,c_3)}$, indexed by a generic triple. This identification was never established, and
+the specific claim it supported would directly contradict O12's own proved exact fact
+$V_n^{(c)} = V_n^{(-c)}$ if the two observables were the same — which forces the conjugate-pair ratio to
+be identically $1$, not a variable integer. Independently of that identification, this repository has
+never carried code computing $\sigma_c(n)$ or $r(c,q)$: `code/` holds only the compiled figure, not a
+generating script. The proposition is withdrawn on both grounds, along with the numerical table and
+figure built on it (retained in the paper for provenance, explicitly marked as non-reproducible).
+
+What remains, independent of any pipeline identification: the Weil representation obeys the exact
+conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the Cauchy–Schwarz inequality bounds any
+pair-product observable built from it. The exponent-doubling argument is restated as a conditional,
+purely algebraic remark (see **Core Result** below), with no numerical value asserted.
 
 
 # Core Result
 
-The paper constructs a proposed fibre-level observable from
-**conjugate pairs of Weil blocks**, not individual blocks.
+*If* a per-block observable $\sigma_c(n)$ has a conjugate-pair ratio
+$r(c,q) = \sigma_{q-c}(n)/\sigma_c(n)$ independent of the shell index $n$, *then* the pair-level product
+$\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$ has log-log slope exactly double that of
+$\sigma_c(n)$:
+$\delta_{\mathrm{pair}} = 2\,\delta_c.$
 
-Defining the pair observable:
-$\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n),$
+This is a direct consequence of differentiating a product of two power laws with a constant ratio — not
+a numerical discovery, and not asserted of any specific sourced observable in this revision.
 
-the finite-window scaling is:
-$\sigma_{\mathrm{pair}}(n) \sim n^{-\delta_{\mathrm{pair}}},
-\quad
-\delta_{\mathrm{pair}} = 2\,\delta_c.$
+Applied to the real O12/O13 pipeline, where the exact conjugate-block identity forces $r(c,q) \equiv 1$,
+the pair observable reduces definitionally to $\sigma_c(n)^2$: there is no doubling phenomenon left to
+explain, only a squared power law.
 
-Numerically:
-$\delta_c \approx 3.7
-\quad \Longrightarrow \quad
-\delta_{\mathrm{pair}} \approx 7.4,$
+No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is asserted in this revision.
 
-which meets the lower edge of the phenomenological comparison range under the production
-$\log(n+1)$ convention.
-On the same finite windows, conversion to $\log n$ gives approximately $6.6$--$6.9$, below that edge.
 
+# What Is Established vs. What Is Open
 
-# Main Structural Results
+**Established, unconditionally:**
 
-## 1. Symmetry of conjugate blocks
+- $\rho_{q-c} = \overline{\rho_c}$ — standard representation theory of the Weil representation.
+- The Cauchy–Schwarz bound on any non-negative pair-product observable.
+- The conditional doubling statement above, given its stated premise.
 
-The paper proves that:
+**Open — two independent questions, not one:**
 
-- the Weil representations satisfy
-  $\rho_{q-c} = \overline{\rho_c}$
-- the Gram–Schmidt dynamics is identical for $(c, q-c)$
-- therefore:
-  $  \delta_c = \delta_{q-c}
-  \]
+- Whether the identification of conjugate pairs with the fibres of the projection $\Pi$ can be derived
+  from first principles within Cosmochrony (already flagged as open in v1.0/v1.0.1).
+- Whether *any* sourced, reproducible $\sigma_c(n)$ satisfies the doubling premise (an $n$-independent
+  conjugate-pair ratio) at all — this question is *newly* open in v1.1, since the original draft's claim
+  to this effect (Proposition on conjugate sigma-profile proportionality) is withdrawn.
 
-This is an exact structural result, independent of numerical fitting.
 
+# Numerical Content — Reclassified as Non-Reproducible
 
-## 2. Observable redefinition
+Table 1 and Figure 1 of the paper reproduce the original draft's numbers exactly, for provenance, and
+are explicitly marked in-text as **not** established results in this revision. This repository has never
+contained a script computing $\sigma_c(n)$, $r(c,q)$, or the reported fits; `code/` contains only the
+compiled figure file. Regenerating this content would require an explicit, sourced definition of
+$\sigma_c(n)$ that this paper does not supply.
 
-The key correction is:
 
-> admissibility is defined on fibres of the projection Π, not on individual preimages.
+# Downstream Propagation: O17–O21
 
-This leads to the pair observable:
-$R_n^{\mathrm{pair}} = \frac{1}{m_{\mathrm{pairs}}}
-\sum_{c} \sigma_c(n)\,\sigma_{q-c}(n)$
-
-This observable:
-
-- restores a clean power law (R² > 0.9999)
-- reduces slope variance by a factor ≈ 6
-- yields the exactly doubled pair exponent under the chosen fitting convention
-
-
-## 3. Exact doubling and the apparent δ-deficit
-
-The discrepancy identified in O12–O15:
-$\hat\delta_{\mathrm{exact}} \approx 3.7 \ll 7.4$
-
-is re-expressed at pair level as:
-
-> a single-branch measurement of a two-branch structure.
-
-The pair exponent is:
-$\delta_{\mathrm{pair}} = 2\,\hat\delta_{\mathrm{exact}}$
-
-No modification of the exact Weil-block computation is required.
-This statement does not identify a native growth law carrying the pair observable.
-
-
-## 4. Production-window comparison
-
-The reported production-window values lie near $7.4$ under the $\log(n+1)$ convention.
-They do not establish a structural lower bound: the estimator conversion to $\log n$ moves the same
-finite-window values to approximately $6.6$--$6.9$.
-
-
-## 5. Status of the factor r(c,q)
-
-The multiplicative ratio:
-$r(c,q) = \frac{\sigma_{q-c}}{\sigma_c}$
-
-is shown to:
-
-- arise from block-dependent normalisation in σ
-- depend on parameters $(b_1, b_2)$
-- not affect asymptotic exponents
-
-Thus:
-
-> r(c,q) is not a structural invariant of the representation.
-
-
-# Observable Hierarchy (Updated)
-
-O16 refines the hierarchy introduced in O15:
-
-- \(\hat\delta_{\mathrm{exact}}\):  
-  single-block exponent (branch-level)
-
-- \(\delta_{\mathrm{pair}}\):  
-  fibre-level exponent (physical observable)
-
-- \(\alpha_{\mathrm{dyn}}\):  
-  dynamic exponent entering the growth law
-
-The cross-substrate prescription would identify:
-
-$\alpha_{\mathrm{dyn}} = \delta_{\mathrm{pair}}$
-
-under an additional hypothesis linking the O7 reduced-model growth variable to the Heisenberg pair observable.
-No such native pair-capacity growth process is defined or derived in the frozen corpus.
-
-
-# Interpretation of the Result
-
-The central conceptual outcome is:
-
-> conjugate Weil blocks define a cleaner fibre-level observable with an exactly doubled exponent.
-
-More precisely:
-
-- O15: scalar observable invalid
-- O16: proposed fibre observable = conjugate-pair observable
-
-This resolves the pair-observable construction.
-It leaves the independent capacity-to-rate dynamics unresolved.
-
-
-# Structural Role of O16
-
-O16 extends the chain:
-
-- **O12–O13**: exact block extraction and asymptotics
-- **O14**: observable mismatch identified
-- **O15**: scalar-to-block failure localised
-- **O16**: conjugate-pair observable constructed at fibre level
-
-So O16 establishes:
-
-- the pair exponent is an exact consequence of conjugate-profile proportionality
-- the fibre interpretation remains structurally motivated
-- the pair exponent is not automatically the exponent of a native growth equation
-
-
-# What O16 Adds
-
-- identification of the **pair observable**
-- proof of **exponent doubling**
-- finite-window comparison with the phenomenological range
-- elimination of aggregation-based explanations (via O15)
-- clarification of the role of **normalisation factors**
-- exact separation of the pair-exponent result from the capacity-to-rate prescription
-
-
-# Outcome
-
-O16 resolves the exact pair-exponent component of the S2 discrepancy.
-
-The exact Weil-block framework:
-
-- produces an exactly doubled pair exponent
-- gives a convention-sensitive numerical overlap with the comparison range
-- does not supply the O6--O7 growth carrier on the Heisenberg substrate
-
-
-# Residual Open Problem
-
-The asymptotic pair exponent and its relation to any native growth process remain open.
-The finite-window values do not establish either endpoint of a structural admissible spectrum.
-
-
-# Emerging Direction (O17)
-
-Preliminary analysis indicates that the upper bound arises from:
-
-- a **dynamical coherence constraint**
-- defined on the full trajectory $\sigma(n)$
-- not reducible to local or single-scale criteria
-
-Admissibility likely requires:
-
-- multi-scale regularity of relaxation
-- absence of spikes or incoherent transitions
-- sufficient persistence across BFS shells
-
-This defines the next programme step.
-
-
-# Open Directions
-
-1. **Analytical characterization of trajectory coherence (O17)**  
-   Derive a global criterion selecting admissible profiles
-
-2. **Relation between δ and persistence length**  
-   Connect exponent values to n_active and trajectory shape
-
-3. **Derivation of fibre structure from Π**
-   Establish conjugate pairing from first principles.
-
-4. **Native capacity-to-rate bridge**
-   Construct a growth process carrying the pair observable, or state an explicitly cross-substrate hypothesis.
-
-5. **Extension to higher-rank structures**
-   Investigate multi-branch fibres beyond pairs
-
-6. **Phenomenological mapping**
-   Relate positions within [7.4, 10.6] to particle hierarchy
+The withdrawn baseline and the withdrawn proposition were cited, directly or through this paper, in
+O17–O21. Their correctness does not follow automatically from this correction — each must be reassessed
+on its own text — but any argument in that range relying on either withdrawn item without independent
+support no longer has the support it cites here. O17's corrective revision is addressed as a separate,
+standalone paper; O18–O21 are audited separately.
 
 
 # Status
 
-The programme is now:
+- Free of any withdrawn numerical claim (this revision).
+- Equipped with a conditional, algebraically valid exponent-doubling remark, not yet tied to a sourced
+  observable.
+- The identification of conjugate pairs with fibres of $\Pi$ remains an open, structurally motivated
+  hypothesis.
 
-- free of derivational ambiguity (**O15**)
-- equipped with the conjugate-pair observable (**O16**)
-- consistent with phenomenological scales
+Remaining work:
 
-Remaining work is:
+- A sourced, reproducible definition of a per-block observable satisfying the doubling premise (or a
+  demonstration that the real O12/O13 pipeline's own $\Sigma_n^{(c)}$, for which $r\equiv1$, is the
+  right object to study at the pair level in the first place).
+- Structural derivation of the fibre/conjugate-pair identification from $\Pi$.
+- A native capacity-to-rate bridge, independent of and not addressed by this paper.
 
-- dynamical selection
-- trajectory-level admissibility
-- structural derivation of Π-fibres
 
 # Repository Structure
 
 ```text
 paper/
 ├── out/      # Compiled O16 PDF
+├── code/     # Original draft's figure (no generating script)
 ├── tex/      # LaTeX sources
 └── README.md
 ```
+
 # Citation
 
 If you reference this work, please cite:
 
-J. Beau, Fibre Admissibility and Exponent Doubling in the Exact Weil Regime:
-Resolution of the δ-Deficit via Conjugate Pair Observables,
+J. Beau, Fibre Admissibility and Exact Pair-Exponent Doubling,
 Zenodo, 2026.
 
 # Acknowledgements
@@ -284,8 +144,8 @@ This repository is intended as a research reference.
 Critical feedback, independent verification, and further analysis of:
 
 - fibre-level observables
-- trajectory coherence criteria
-- exact-block growth laws
+- a sourced definition of the per-block observable $\sigma_c(n)$
+- the capacity-to-rate bridge
 
 are welcome.
 
