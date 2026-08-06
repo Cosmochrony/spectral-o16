@@ -54,7 +54,8 @@
     This identification is not established, and the specific claim it
     supported --- a conjugate-pair ratio $r(c,q) \in \{1,2,3,4\}$ varying by
     block --- would directly contradict O12's own proved exact fact
-    $V_n^{(c)} = V_n^{(-c)}$ if the two observables were the same
+    $\Sigma_n^{(c)} = \Sigma_n^{(-c)}$ (Proposition ``Exact rank formula,''
+    \cite{Beau2026a16}) if the two observables were the same
     (Section~\ref{sec:sigma_symmetry}).
     Both the baseline and the proposition are accordingly withdrawn as
     unverified, along with the numerical table and figure built on them,
@@ -62,7 +63,8 @@
     What survives, independently of any pipeline identification, is the
     underlying representation theory: the Weil representation obeys the
     exact conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the
-    Cauchy--Schwarz inequality bounds any pair-product built from it.
+    elementary Cauchy--Schwarz inequality $\langle\sigma_c^2\rangle \geq
+    \langle\sigma_c\rangle^2$, valid for any non-negative sequence.
     The paper's remaining content is restated as a conditional, purely
     algebraic remark: \emph{if} a per-block observable $\sigma_c(n)$ has a
     conjugate-pair ratio $r(c,q) = \sigma_{q-c}(n)/\sigma_c(n)$ independent of
@@ -247,13 +249,21 @@ whose consequences are derived and tested independently.
   First, \emph{if} $\sigma_c(n)$ were the O12/O13 pipeline's
   $\Sigma_n^{(c_1,c_2,c_3)}$ --- the identification the original draft
   assumed --- Proposition~\ref{prop:sigma_ratio} would directly contradict
-  O12's own proved exact fact
+  O12's own proved exact fact, Proposition ``Exact rank formula''
+  \cite{Beau2026a16}:
   \[
-    V_n^{(c_1,c_2,c_3)} = V_n^{(-c_1,-c_2,-c_3)}
-    \quad \text{exactly, for every prime, every triple, every complete shell,}
+    \Sigma_n^{(c_1,c_2,c_3)} = \Sigma_n^{(-c_1,-c_2,-c_3)}
+    \quad \text{exactly, for every prime, every generic triple, every shell,}
   \]
   which forces the conjugate-pair ratio to be identically~$1$, not a
   variable integer in $\{1,2,3,4\}$.
+  (O12's proof: both the sum $A=c_1+c_2+c_3$ and the pair $(B,C)=(c_2+c_3,c_3)$
+  flip sign together under $c\mapsto-c$, so the derived pair
+  $(\alpha,\beta)=(B/A,C/A)$, which alone determines $\dim W_{\leq n}^{(c)}$
+  and hence $\Sigma_n^{(c)}$, is unchanged.
+  This is distinct from the inter-block variance ratio $V_n$ of
+  Section~\ref{sec:context}, which carries no per-block index and is not
+  the quantity O12 proves invariant.)
   Second, independently of that identification, this repository has never
   carried code computing $\sigma_c(n)$ or $r(c,q)$
   (Section~\ref{sec:validation}): the claim of machine-precision agreement
@@ -267,11 +277,19 @@ Independently of Proposition~\ref{prop:sigma_ratio}, two facts hold
 unconditionally.
 The conjugation identity~\eqref{eq:weil_conj} is standard representation
 theory of the Weil representation, needing no pipeline verification.
-And for any well-defined non-negative observable $\sigma_c(n)$ whatsoever,
-the Cauchy--Schwarz inequality gives
-$\langle\sigma_c\sigma_{q-c}\rangle \leq \langle\sigma_c\rangle^2$, with
-equality only when all $\sigma_c$ are equal --- a generic fact used again
-in Section~\ref{sec:doubling}.
+And for any well-defined non-negative sequence $\sigma_c(n)$ whatsoever
+(fixed $n$, varying over the block sample), the elementary Cauchy--Schwarz
+inequality --- applied to $\sigma_c$ against the constant sequence, i.e.\
+$(\sum_c \sigma_c\cdot1)^2 \leq (\sum_c\sigma_c^2)(\sum_c 1^2)$ --- gives
+\begin{equation}
+  \langle\sigma_c^2\rangle \;\geq\; \langle\sigma_c\rangle^2,
+  \label{eq:cs-correct}
+\end{equation}
+with equality only when $\sigma_c$ is constant across the block sample.
+This is a generic, unconditional fact about any non-negative sequence,
+used again in Section~\ref{sec:doubling}; it does not by itself say
+anything about $\sigma_{q-c}$ or the conjugate-pair structure, since it
+compares $\sigma_c$ only to its own mean.
 Neither fact requires or supports the specific numeric form of
 Proposition~\ref{prop:sigma_ratio}.
   \end{remark}
@@ -300,18 +318,23 @@ Proposition~\ref{prop:sigma_ratio}.
     \end{equation}
     where the sum is over distinct pairs in the block sample.
 
-    \begin{remark}[Distinction from $\bar\sigma^2$]
-$R_n^{\mathrm{pair}} \neq \bar\sigma(n)^2$ in general.
-The Cauchy--Schwarz inequality gives
-$\langle \sigma_c \sigma_{q-c}\rangle \leq \langle\sigma_c\rangle^2$,
-with equality only when all $\sigma_c$ are equal, so the two observables
-are structurally distinct whenever $\sigma_c$ varies across the block
-sample.
-The original draft additionally reported specific factors (ranging from
-$0.15$ to~$10.5$ across the fit window) by which they differ in the
-pipeline data; that number is withdrawn along with
-Proposition~\ref{prop:sigma_ratio}, on the same two grounds
-(Section~\ref{sec:sigma_symmetry}).
+    \begin{remark}[Distinction from $\bar\sigma^2$ --- corrected direction]
+$R_n^{\mathrm{pair}} \neq \bar\sigma(n)^2$ in general, but not for the
+reason or in the direction the original draft gave.
+On the real O12/O13 pipeline, where $r(c,q)\equiv1$
+(Section~\ref{sec:sigma_symmetry}), each pair contributes
+$\sigma_c(n)\,\sigma_{q-c}(n) = \sigma_c(n)^2$, so
+$R_n^{\mathrm{pair}} = \langle\sigma_c(n)^2\rangle$ while
+$\bar\sigma(n)^2 = \langle\sigma_c(n)\rangle^2$.
+By the elementary Cauchy--Schwarz inequality~\eqref{eq:cs-correct},
+$\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$, so on the real
+pipeline $R_n^{\mathrm{pair}} \geq \bar\sigma(n)^2$ --- the \emph{opposite}
+direction from the inequality the original draft asserted --- with
+equality only when $\sigma_c(n)$ is constant across the block sample.
+The original draft's specific factors (ranging from $0.15$ to~$10.5$
+across the fit window, some below~$1$, inconsistent with either direction
+holding uniformly) rested on Proposition~\ref{prop:sigma_ratio} and are
+withdrawn with it (Section~\ref{sec:sigma_symmetry}).
     \end{remark}
 
   \subsection{Exponent doubling --- conditional statement}

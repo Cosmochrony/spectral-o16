@@ -29,17 +29,23 @@ The paper's central proposition (conjugate-pair sigma profiles differ by an inte
 $r(c,q)\in\{1,2,3,4\}$, "confirmed to machine precision") identified its scalar observable $\sigma_c(n)$,
 indexed by $c \in (\mathbb{Z}/q\mathbb{Z})^*$, with O12/O13's exact block observable
 $\Sigma_n^{(c_1,c_2,c_3)}$, indexed by a generic triple. This identification was never established, and
-the specific claim it supported would directly contradict O12's own proved exact fact
-$V_n^{(c)} = V_n^{(-c)}$ if the two observables were the same — which forces the conjugate-pair ratio to
-be identically $1$, not a variable integer. Independently of that identification, this repository has
+the specific claim it supported would directly contradict O12's own proved exact fact,
+Proposition "Exact rank formula": $\Sigma_n^{(c)} = \Sigma_n^{(-c)}$, if the two observables were the
+same — which forces the conjugate-pair ratio to be identically $1$, not a variable integer. (This is
+distinct from the inter-block variance ratio $V_n$ used elsewhere in the O-series, which carries no
+per-block index and is not the quantity O12 proves invariant.) Independently of that identification,
+this repository has
 never carried code computing $\sigma_c(n)$ or $r(c,q)$: `code/` holds only the compiled figure, not a
 generating script. The proposition is withdrawn on both grounds, along with the numerical table and
 figure built on it (retained in the paper for provenance, explicitly marked as non-reproducible).
 
 What remains, independent of any pipeline identification: the Weil representation obeys the exact
-conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the Cauchy–Schwarz inequality bounds any
-pair-product observable built from it. The exponent-doubling argument is restated as a conditional,
-purely algebraic remark (see **Core Result** below), with no numerical value asserted.
+conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the elementary Cauchy–Schwarz inequality
+$\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$ holds for any non-negative sequence — the
+opposite direction from what the original draft's "distinction from $\bar\sigma^2$" remark asserted.
+On the real pipeline, where $r(c,q)\equiv1$, this gives $R_n^{\mathrm{pair}} \geq \bar\sigma(n)^2$, not
+$\leq$. The exponent-doubling argument is restated as a conditional, purely algebraic remark (see
+**Core Result** below), with no numerical value asserted.
 
 
 # Core Result
@@ -65,7 +71,8 @@ No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is a
 **Established, unconditionally:**
 
 - $\rho_{q-c} = \overline{\rho_c}$ — standard representation theory of the Weil representation.
-- The Cauchy–Schwarz bound on any non-negative pair-product observable.
+- The elementary Cauchy–Schwarz bound $\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$ on any
+  non-negative sequence.
 - The conditional doubling statement above, given its stated premise.
 
 **Open — two independent questions, not one:**
