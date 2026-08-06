@@ -42,46 +42,35 @@
 
   \begin{abstract}
     \vspace{0.5em}
-    This is a corrective revision of the version published as v1.0/v1.0.1.
-    That draft opened by asserting an established O-series baseline
-    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a corollary ruling out
-    any reweighting resolution; neither claim can be traced to any source in
-    the current, corrected O12--O15 texts, and both are withdrawn
-    (Section~\ref{sec:context}).
-    The draft's central proposition identified its scalar per-block
-    redundancy $\sigma_c(n)$, indexed by $c \in \Fq$, with the O12/O13
-    pipeline's exact block observable $\Sigma_n^{(c_1,c_2,c_3)}$, indexed by a
-    generic triple.
-    This identification is not established, and the specific claim it
-    supported --- a conjugate-pair ratio $r(c,q) \in \{1,2,3,4\}$ varying by
-    block --- would directly contradict O12's own proved exact fact
-    $\Sigma_n^{(c)} = \Sigma_n^{(-c)}$ (Proposition ``Exact rank formula,''
-    \cite{Beau2026a16}) if the two observables were the same
-    (Section~\ref{sec:sigma_symmetry}).
-    Both the baseline and the proposition are accordingly withdrawn as
-    unverified, along with the numerical table and figure built on them,
-    for which this repository has never carried reproduction code.
-    What survives, independently of any pipeline identification, is the
-    underlying representation theory: the Weil representation obeys the
-    exact conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the
-    elementary Cauchy--Schwarz inequality $\langle\sigma_c^2\rangle \geq
-    \langle\sigma_c\rangle^2$, valid for any non-negative sequence.
-    The paper's remaining content is restated as a conditional, purely
-    algebraic remark: \emph{if} a per-block observable $\sigma_c(n)$ has a
-    conjugate-pair ratio $r(c,q) = \sigma_{q-c}(n)/\sigma_c(n)$ independent of
-    the shell index~$n$, \emph{then} the pair-level product
-    $\sigma_c(n)\,\sigma_{q-c}(n)$ has log-log slope exactly double that of
-    $\sigma_c(n)$ --- a direct consequence of differentiating a product of
-    two power laws with a constant ratio, not a numerical discovery.
-    Applied to the real O12/O13 pipeline, where the exact conjugate-block
-    identity forces $r(c,q) \equiv 1$, the pair observable reduces
-    definitionally to $\sigma_c(n)^2$: no doubling phenomenon remains to
-    explain.
+    This is a corrective revision of the version published as v1.0/v1.0.1,
+    which asserted an unsourced O-series baseline
+    $\dhat_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a proposition ---
+    a conjugate-pair ratio $r(c,q) \in \{1,2,3,4\}$ --- identifying its
+    scalar $\sigma_c(n)$ with the O12/O13 pipeline's triple-indexed
+    $\Sigma_n^{(c_1,c_2,c_3)}$.
+    Neither claim traces to any source in the current O12--O15 texts; the
+    proposition would also contradict O12's own proved fact
+    $\Sigma_n^{(c)} = \Sigma_n^{(-c)}$ if that identification held.
+    Both are withdrawn, along with the numerical table and figure built
+    on them, for which this repository has never carried reproduction
+    code (Sections~\ref{sec:context}, \ref{sec:sigma_symmetry}).
+
+    What survives, independently of any pipeline identification: the
+    Weil representation's exact conjugation identity
+    $\rho_{q-c} = \overline{\rho_c}$, and the elementary bound
+    $\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$.
+    The paper's remaining content is a conditional, algebraic remark:
+    \emph{if} a per-block observable has an $n$-independent conjugate-pair
+    ratio, \emph{then} the pair-level product's log-log slope is exactly
+    double the single-block slope --- a consequence of differentiating a
+    constant-ratio product, not a numerical discovery.
+    On the real O12/O13 pipeline, where $r(c,q) \equiv 1$ exactly, this
+    reduces definitionally to $\sigma_c(n)^2$: no doubling phenomenon
+    remains to explain.
     No value of $\delta_{\mathrm{pair}}$ or of the O7 prescription for
-    $\bstar$ is asserted in this revision.
-    The withdrawn baseline and proposition were cited downstream in
-    O17--O21, whose status is addressed separately
-    (Section~\ref{sec:implications}).
+    $\bstar$ is asserted here.
+    The withdrawn baseline and proposition propagated into O17--O21,
+    addressed separately (Section~\ref{sec:implications}).
   \end{abstract}
 
   \paragraph{Keywords.}
@@ -270,12 +259,12 @@ whose consequences are derived and tested independently.
   $\Sigma_n^{(c_1,c_2,c_3)}$ --- the identification the original draft
   assumed --- Proposition~\ref{prop:sigma_ratio} would directly contradict
   O12's own proved exact fact, Proposition ``Exact rank formula''
-  \cite{Beau2026a16}:
+  \cite{Beau2026a16}, which holds exactly for every prime, every generic
+  triple, and every shell:
   \[
-    \Sigma_n^{(c_1,c_2,c_3)} = \Sigma_n^{(-c_1,-c_2,-c_3)}
-    \quad \text{exactly, for every prime, every generic triple, every shell,}
+    \Sigma_n^{(c_1,c_2,c_3)} = \Sigma_n^{(-c_1,-c_2,-c_3)}.
   \]
-  which forces the conjugate-pair ratio to be identically~$1$, not a
+  This forces the conjugate-pair ratio to be identically~$1$, not a
   variable integer in $\{1,2,3,4\}$.
   (O12's proof: both the sum $A=c_1+c_2+c_3$ and the pair $(B,C)=(c_2+c_3,c_3)$
   flip sign together under $c\mapsto-c$, so the derived pair
@@ -389,7 +378,7 @@ withdrawn with it (Section~\ref{sec:sigma_symmetry}).
     squaring a power law, not a doubling phenomenon requiring the fibre
     construction to explain.
 
-  \section{Numerical validation --- reclassified as non-reproducible}
+  \section{Numerical validation --- non-reproducible}
   \label{sec:validation}
 
   This repository has never contained code computing $\sigma_c(n)$,
@@ -598,6 +587,9 @@ factor to explain.
   as the relevant unit of admissibility.
 
   \bibliographystyle{plain}
+  \begingroup
+  \raggedright
   \bibliography{cosmochrony-bibliography}
+  \endgroup
 
 \end{document}
