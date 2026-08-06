@@ -1,51 +1,8 @@
 This repository contains the source of the **O16** Cosmochrony paper
 *Fibre Admissibility Hypotheses and Conditional Pair-Exponent Doubling*.
 
-**Version 1.1 — corrective revision.** This version withdraws the numerical baseline and the central
-proposition of v1.0/v1.0.1, which were found to be unsourced and unreproducible respectively. What
-survives is a conditional, purely algebraic remark about exponent doubling, plus the genuine
-representation-theoretic conjugation identity it was built on. See **Correction (v1.1)** below.
-
 This work extends the **spectral admissibility sub-programme** by proposing a fibre-level observable
 in the exact Weil-block regime, defined on conjugate pairs $\{c, q-c\}$.
-
-
-# Correction (v1.1)
-
-The original draft (v1.0/v1.0.1) opened by asserting an established O-series baseline
-$\hat\delta_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a corollary (O15's aggregation no-go) ruling
-out any reweighting resolution. Neither claim can be traced to any source in the current, corrected
-O12–O15 texts:
-
-- the $3.72 \pm 0.06$ figure appears in no table of the current O12, O13, or O14 texts, nor in O15's
-  per-prime column;
-- O15's own corrective revision found the unconditional no-go **false as originally stated**, with an
-  explicit counterexample, and replaced it with a narrower, conditional corollary that applies only to
-  O15's specific dynamical weights and whose hypothesis is not verified at any tested prime.
-
-Both are withdrawn.
-
-The paper's central proposition (conjugate-pair sigma profiles differ by an integer factor
-$r(c,q)\in\{1,2,3,4\}$, "confirmed to machine precision") identified its scalar observable $\sigma_c(n)$,
-indexed by $c \in (\mathbb{Z}/q\mathbb{Z})^*$, with O12/O13's exact block observable
-$\Sigma_n^{(c_1,c_2,c_3)}$, indexed by a generic triple. This identification was never established, and
-the specific claim it supported would directly contradict O12's own proved exact fact,
-Proposition "Exact rank formula": $\Sigma_n^{(c)} = \Sigma_n^{(-c)}$, if the two observables were the
-same — which forces the conjugate-pair ratio to be identically $1$, not a variable integer. (This is
-distinct from the inter-block variance ratio $V_n$ used elsewhere in the O-series, which carries no
-per-block index and is not the quantity O12 proves invariant.) Independently of that identification,
-this repository has
-never carried code computing $\sigma_c(n)$ or $r(c,q)$: `code/` holds only the compiled figure, not a
-generating script. The proposition is withdrawn on both grounds, along with the numerical table and
-figure built on it (retained in the paper for provenance, explicitly marked as non-reproducible).
-
-What remains, independent of any pipeline identification: the Weil representation obeys the exact
-conjugation identity $\rho_{q-c} = \overline{\rho_c}$, and the elementary Cauchy–Schwarz inequality
-$\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$ holds for any non-negative sequence — the
-opposite direction from what the original draft's "distinction from $\bar\sigma^2$" remark asserted.
-On the real pipeline, where $r(c,q)\equiv1$, this gives $R_n^{\mathrm{pair}} \geq \bar\sigma(n)^2$, not
-$\leq$. The exponent-doubling argument is restated as a conditional, purely algebraic remark (see
-**Core Result** below), with no numerical value asserted.
 
 
 # Core Result
@@ -57,13 +14,13 @@ $\sigma_c(n)$:
 $\delta_{\mathrm{pair}} = 2\,\delta_c.$
 
 This is a direct consequence of differentiating a product of two power laws with a constant ratio — not
-a numerical discovery, and not asserted of any specific sourced observable in this revision.
+a numerical discovery, and not asserted of any specific sourced observable.
 
 Applied to the real O12/O13 pipeline, where the exact conjugate-block identity forces $r(c,q) \equiv 1$,
 the pair observable reduces definitionally to $\sigma_c(n)^2$: there is no doubling phenomenon left to
 explain, only a squared power law.
 
-No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is asserted in this revision.
+No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is asserted.
 
 
 # What Is Established vs. What Is Open
@@ -74,54 +31,61 @@ No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is a
 - The elementary Cauchy–Schwarz bound $\langle\sigma_c^2\rangle \geq \langle\sigma_c\rangle^2$ on any
   non-negative sequence.
 - The conditional doubling statement above, given its stated premise.
+- The exact conjugate-block identity of the real O12/O13 pipeline,
+  $\Sigma_n^{(c_1,c_2,c_3)} = \Sigma_n^{(-c_1,-c_2,-c_3)}$, which forces $r(c,q)\equiv1$ there.
 
 **Open — three independent premises, not one, and not to be blended together:**
 
-- That $\Pi$ carries some parity involution at all (equation for $\Pi(x)=\Pi(-x)$; already flagged as
-  open in v1.0/v1.0.1).
+- That $\Pi$ carries some parity involution at all ($\Pi(x)=\Pi(-x)$).
 - That this specific involution is realised, in the Weil representation, as the character map
   $c\mapsto q-c$ — a separate, independent choice, not a consequence of the proved conjugation identity
   $\rho_{q-c}=\overline{\rho_c}$, which holds regardless of any involution on $\Pi$. Only given *both*
   this and the previous premise are conjugate pairs the fibres of $\Pi$.
 - Whether *any* sourced, reproducible $\sigma_c(n)$ satisfies the doubling premise (an $n$-independent
-  conjugate-pair ratio) at all — this question is *newly* open in v1.1, since the original draft's claim
-  to this effect (Proposition on conjugate sigma-profile proportionality) is withdrawn.
-
-
-# Numerical Content — Reclassified as Non-Reproducible
-
-Table 1 and Figure 1 of the paper reproduce the original draft's numbers exactly, for provenance, and
-are explicitly marked in-text as **not** established results in this revision. This repository has never
-contained a script computing $\sigma_c(n)$, $r(c,q)$, or the reported fits; `code/` contains only the
-compiled figure file. Regenerating this content would require an explicit, sourced definition of
-$\sigma_c(n)$ that this paper does not supply.
+  conjugate-pair ratio) at all, for a nontrivial pair-level observable distinct from the block squared.
 
 
 # Downstream Propagation: O17–O21
 
-The withdrawn baseline and the withdrawn proposition were cited, directly or through this paper, in
-O17–O21. Their correctness does not follow automatically from this correction — each must be reassessed
-on its own text — but any argument in that range relying on either withdrawn item without independent
-support no longer has the support it cites here. O17's corrective revision is addressed as a separate,
-standalone paper; O18–O21 are audited separately.
+O16's fibre-level proposal and its two open premises are cited, directly or through O17, in O18–O21.
+Their correctness does not follow automatically from this paper — each must be reassessed on its own
+text. O17 develops the raw-dynamics question independently, within its own scalar toy model; O18–O21
+are audited separately.
 
 
 # Status
 
-- Free of any withdrawn numerical claim (this revision).
-- Equipped with a conditional, algebraically valid exponent-doubling remark, not yet tied to a sourced
-  observable.
 - The identification of conjugate pairs with fibres of $\Pi$ remains open, and rests on two independent,
   structurally motivated premises (that $\Pi$ carries a parity involution, and that this involution is
   realised as $c\mapsto q-c$), neither implied by the other or by the proved conjugation identity.
+- The exponent-doubling remark is conditional and algebraically valid, not yet tied to a sourced
+  observable other than the real pipeline's own $\Sigma_n^{(c)}$ (for which it holds trivially, since
+  $r\equiv1$ there).
 
 Remaining work:
 
-- A sourced, reproducible definition of a per-block observable satisfying the doubling premise (or a
-  demonstration that the real O12/O13 pipeline's own $\Sigma_n^{(c)}$, for which $r\equiv1$, is the
-  right object to study at the pair level in the first place).
+- A sourced, reproducible definition of a per-block observable, distinct from the pipeline's own block
+  squared, that satisfies the doubling premise.
 - Structural derivation of the fibre/conjugate-pair identification from $\Pi$.
 - A native capacity-to-rate bridge, independent of and not addressed by this paper.
+
+
+# Version History
+
+- **v1.0 / v1.0.1** — initial release. Asserted a finite-window baseline
+  $\hat\delta_{\mathrm{exact}} \approx 3.72 \pm 0.06$ and a numeric conjugate-pair ratio
+  $r(c,q)\in\{1,2,3,4\}$, both since found unsourced or unreproducible.
+- **v1.1** — corrective revision. Withdrew the baseline and the numeric-ratio proposition (the latter
+  would have contradicted O12's proved exact identity $\Sigma_n^{(c)}=\Sigma_n^{(-c)}$, had the two
+  observables been the same, an identification never established). Replaced the central claim with the
+  conditional, purely algebraic doubling remark above, corrected a backwards Cauchy–Schwarz direction,
+  and separated the fibre identification into two independent hypotheses. The withdrawn numerical table
+  and figure were retained in the PDF body for provenance, explicitly marked non-reproducible.
+- **v1.2** — the PDF body was rewritten to state only the current, established content natively, with no
+  narrative of what was withdrawn or corrected; that history is preserved here and in this paper's
+  Zenodo record notes instead. The non-reproducible table and figure from v1.1 were dropped from the PDF
+  (no current-true content remained to present); `code/` still holds the original compiled figure file
+  for reference. No mathematical content changed between v1.1 and v1.2.
 
 
 # Repository Structure
@@ -129,7 +93,7 @@ Remaining work:
 ```text
 paper/
 ├── out/      # Compiled O16 PDF
-├── code/     # Original draft's figure (no generating script)
+├── code/     # Superseded figure from v1.0/v1.0.1 (no generating script; not cited in v1.2's PDF)
 ├── tex/      # LaTeX sources
 └── README.md
 ```
