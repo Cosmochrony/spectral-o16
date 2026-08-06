@@ -20,6 +20,7 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
 
 \newcommand{\bstar}{\beta^*}
 \newcommand{\dhat}{\hat{\delta}}
@@ -27,7 +28,7 @@
 \newcommand{\ZqZ}{\mathbb{Z}/q\mathbb{Z}}
 \newcommand{\Fq}{(\mathbb{Z}/q\mathbb{Z})^*}
 
-\title{Fibre Admissibility and Exact Pair-Exponent Doubling\\
+\title{Fibre Admissibility Hypotheses and Conditional Pair-Exponent Doubling\\
 \large O16 --- Spectral Admissibility Subprogram}
 
 \author{J.~Beau\\
@@ -136,8 +137,9 @@
     The corrected corollary is narrower on three counts: it applies only
     to O15's specific dynamical weights $w_c(n)$, not to reweighting in
     general; its conclusion holds only when $\log(1+V_n)$ has non-negative
-    OLS slope against $\log n$ over the fitting window, a condition O15
-    identifies as open and does not verify at any tested prime; and it
+    OLS slope against $\log n$ over the fitting window, a condition O15's
+    own corrective revision has since verified at one of its five tested
+    primes ($q=151$), leaving the other four open; and it
     bounds $\alpha_{\mathrm{dyn}}$ against $\dhat_{\mathrm{exact}}$, not
     against the withdrawn $3.72\pm0.06$ baseline of item~2.
     Since this paper's own observable $\sigma_c(n)$ is, as shown in
@@ -186,6 +188,7 @@
     related by~\eqref{eq:parity}.
 
     \begin{remark}[Status of equation~\eqref{eq:parity}]
+      \label{rem:parity-status}
 Equation~\eqref{eq:parity} is the minimal parity involution compatible
 with the Heisenberg group structure.
 Its derivation from first principles within Cosmochrony is an open
@@ -197,22 +200,39 @@ whose consequences are derived and tested independently.
 
   \subsection{Realisation in the Weil representation}
 
-    In the Weil representation $\rho_c$ of $\Heis(\ZqZ)$ at central
-    character~$c \in \Fq$, the involution~\eqref{eq:parity} is realised
-    as the map $c \mapsto q - c$.
-    This is a consequence of the exact conjugation identity
+    The exact conjugation identity
     \begin{equation}
       \rho_{q-c} = \overline{\rho_c},
       \label{eq:weil_conj}
     \end{equation}
-    which holds for all primes~$q$ and all $c \in \Fq$.
-    The fibres of~$\Pi$ are accordingly organised as conjugate pairs
-    $\{c,\, q-c\}$: each observable corresponds to two spectral blocks
-    related by complex conjugation of the representation.
-    This identification is supported by the exact conjugation
-    symmetry~\eqref{eq:weil_conj}, but a derivation directly from
-    the structure of~$\Pi$ within the full Cosmochrony framework
-    remains an open problem (see Remark~\ref{rem:status}).
+    holds for all primes~$q$ and all $c \in \Fq$: this is proved,
+    unconditional representation theory of $\Heis(\ZqZ)$, requiring no
+    hypothesis about~$\Pi$.
+
+    \begin{hypothesis}[Realisation of the parity involution as character conjugation]
+      \label{hyp:realisation}
+      In the Weil representation, the abstract parity
+      involution~\eqref{eq:parity} of~$\Pi$ is realised as the map
+      $c \mapsto q-c$ on the central character.
+    \end{hypothesis}
+
+    \noindent
+    Hypothesis~\ref{hyp:realisation} is a separate, independent premise,
+    not a consequence of identity~\eqref{eq:weil_conj}: the identity is a
+    fact about the representation alone, true regardless of any
+    involution on~$\Pi$, while Hypothesis~\ref{hyp:realisation} is a
+    choice of \emph{which} representation-theoretic map is asserted to
+    realise~$\Pi$'s involution.
+    Nothing derived from~\eqref{eq:weil_conj} alone forces this
+    particular choice; a different, equally exact symmetry of $\Heis(\ZqZ)$
+    could in principle have been proposed instead.
+    \emph{Only given both} equation~\eqref{eq:parity} (itself already
+    flagged as a hypothesis, Remark~\ref{rem:parity-status}) \emph{and}
+    Hypothesis~\ref{hyp:realisation} do the fibres of~$\Pi$ become
+    organised as conjugate pairs $\{c,\,q-c\}$.
+    Both premises remain open, and are listed together as such throughout
+    this paper (Remark~\ref{rem:status}); neither is established from
+    first principles within the full Cosmochrony framework.
 
   \section{Exact symmetry of the sigma profiles}
   \label{sec:sigma_symmetry}
@@ -439,9 +459,15 @@ withdrawn with it (Section~\ref{sec:sigma_symmetry}).
 
   \begin{proposition}[Fibre admissibility --- conditional restatement]
     \label{prop:main}
-    Let $\Pi$ carry the parity involution~\eqref{eq:parity}.
-    In the Weil realisation of $\Heis(\ZqZ)$, the fibres of~$\Pi$
-    are organised as conjugate pairs $\{c, q-c\}$ under~\eqref{eq:weil_conj}.
+    Assume both equation~\eqref{eq:parity} (that $\Pi$ carries a parity
+    involution; Remark~\ref{rem:parity-status}) and
+    Hypothesis~\ref{hyp:realisation} (that this involution is realised, in
+    the Weil representation, as $c\mapsto q-c$) --- two independent
+    premises, neither derived here.
+    Under both, the fibres of~$\Pi$ are organised as conjugate pairs
+    $\{c, q-c\}$; the proved identity~\eqref{eq:weil_conj} then supplies
+    the exact conjugation symmetry those pairs satisfy, but does not by
+    itself establish that they are the fibres.
     The proposed fibre-level observable, defined on complete fibres, is
     $\sigma_{\mathrm{pair}}(n) = \sigma_c(n)\,\sigma_{q-c}(n)$.
     \emph{If} a per-block observable $\sigma_c(n)$ is specified for which
@@ -461,16 +487,19 @@ withdrawn with it (Section~\ref{sec:sigma_symmetry}).
     Section~\ref{sec:sigma_symmetry} holds for any non-negative observable;
     equation~\eqref{eq:doubling} follows from differentiation, given its
     stated premise.
-    Two things are open, not one.
-    The identification of conjugate pairs with the fibres of~$\Pi$ remains
-    a structurally motivated hypothesis, consistent with the Born--Infeld
-    non-injectivity but not derived from first principles within the full
-    Cosmochrony framework.
-    Independently of that identification, whether \emph{any} sourced,
-    reproducible $\sigma_c(n)$ satisfies equation~\eqref{eq:doubling}'s
-    premise --- an $n$-independent conjugate-pair ratio --- is itself now
-    open: Proposition~\ref{prop:sigma_ratio}, the original draft's claim to
-    this effect, is withdrawn (Section~\ref{sec:sigma_symmetry}).
+    Three things are open, not one, and should not be blended into a
+    single ``the fibre identification is hypothesised'' sentence:
+    equation~\eqref{eq:parity} itself, that $\Pi$ carries some parity
+    involution (Remark~\ref{rem:parity-status}); Hypothesis~\ref{hyp:realisation},
+    that this specific involution is realised as $c\mapsto q-c$ in the
+    Weil representation, rather than by some other exact symmetry; and,
+    independently of both, whether \emph{any} sourced, reproducible
+    $\sigma_c(n)$ satisfies equation~\eqref{eq:doubling}'s premise --- an
+    $n$-independent conjugate-pair ratio --- which is itself open since
+    Proposition~\ref{prop:sigma_ratio}, the original draft's claim to this
+    effect, is withdrawn (Section~\ref{sec:sigma_symmetry}).
+    None of the three is derived from first principles within the full
+    Cosmochrony framework, and none follows from either of the others.
   \end{remark}
 
   \begin{remark}[Absence of model modification]

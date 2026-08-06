@@ -1,5 +1,5 @@
 This repository contains the source of the **O16** Cosmochrony paper
-*Fibre Admissibility and Exact Pair-Exponent Doubling*.
+*Fibre Admissibility Hypotheses and Conditional Pair-Exponent Doubling*.
 
 **Version 1.1 — corrective revision.** This version withdraws the numerical baseline and the central
 proposition of v1.0/v1.0.1, which were found to be unsourced and unreproducible respectively. What
@@ -75,10 +75,14 @@ No value of $\delta_{\mathrm{pair}}$, and no O7 prescription for $\beta^*$, is a
   non-negative sequence.
 - The conditional doubling statement above, given its stated premise.
 
-**Open — two independent questions, not one:**
+**Open — three independent premises, not one, and not to be blended together:**
 
-- Whether the identification of conjugate pairs with the fibres of the projection $\Pi$ can be derived
-  from first principles within Cosmochrony (already flagged as open in v1.0/v1.0.1).
+- That $\Pi$ carries some parity involution at all (equation for $\Pi(x)=\Pi(-x)$; already flagged as
+  open in v1.0/v1.0.1).
+- That this specific involution is realised, in the Weil representation, as the character map
+  $c\mapsto q-c$ — a separate, independent choice, not a consequence of the proved conjugation identity
+  $\rho_{q-c}=\overline{\rho_c}$, which holds regardless of any involution on $\Pi$. Only given *both*
+  this and the previous premise are conjugate pairs the fibres of $\Pi$.
 - Whether *any* sourced, reproducible $\sigma_c(n)$ satisfies the doubling premise (an $n$-independent
   conjugate-pair ratio) at all — this question is *newly* open in v1.1, since the original draft's claim
   to this effect (Proposition on conjugate sigma-profile proportionality) is withdrawn.
@@ -107,8 +111,9 @@ standalone paper; O18–O21 are audited separately.
 - Free of any withdrawn numerical claim (this revision).
 - Equipped with a conditional, algebraically valid exponent-doubling remark, not yet tied to a sourced
   observable.
-- The identification of conjugate pairs with fibres of $\Pi$ remains an open, structurally motivated
-  hypothesis.
+- The identification of conjugate pairs with fibres of $\Pi$ remains open, and rests on two independent,
+  structurally motivated premises (that $\Pi$ carries a parity involution, and that this involution is
+  realised as $c\mapsto q-c$), neither implied by the other or by the proved conjugation identity.
 
 Remaining work:
 
@@ -133,7 +138,7 @@ paper/
 
 If you reference this work, please cite:
 
-J. Beau, Fibre Admissibility and Exact Pair-Exponent Doubling,
+J. Beau, Fibre Admissibility Hypotheses and Conditional Pair-Exponent Doubling,
 Zenodo, 2026.
 
 # Acknowledgements
